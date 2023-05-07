@@ -8,7 +8,7 @@
 
 <div>
   <a href="https://www.figma.com/file/lG8nS2SAyjqsvZJJ9YysJJ/pomodoter?type=design&node-id=0%3A1&t=QXgr47mq1RNbN3uy-1">
-    <img src="https://github.com/iamlorddop/pomodoro_timer/blob/main/img_github/pomodoro_for_developer.png" width="200" height="200" alt="pomodoro timer for developer cover">
+    <img src="https://github.com/iamlorddop/pomodoro_timer/blob/main/img_github/pomodoro_for_developer.png" width="500" height="500" alt="pomodoro timer for developer cover">
   </a>
 </div>
 
