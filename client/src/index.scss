@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
 * {
   padding: 0;
   margin: 0;
@@ -10,44 +11,49 @@ a {
   text-decoration: none;
 }
 
-:root[data-theme=light] {
+// ====---- Variables ----==== //
+
+// ---- For light theme
+
+:root[data-theme="light"] {
   --background-color: #FEEEEE;
 }
 
-:root[data-theme=light] {
+:root[data-theme="light"] {
   --background-for-container: #FFFFFF;
 }
 
-:root[data-theme=light] {
+:root[data-theme="light"] {
   --color-default: #956262;
 }
 
-:root[data-theme=light] {
+:root[data-theme="light"] {
   --border-color: #956262;
 }
 
-:root[data-theme=dark] {
+// ---- For dark theme
+:root[data-theme="dark"] {
   --background-color: #404740;
 }
 
-:root[data-theme=dark] {
+:root[data-theme="dark"] {
   --background-for-container: #2E332E;
 }
 
-:root[data-theme=dark] {
+:root[data-theme="dark"] {
   --color-default: #889562;
 }
 
-:root[data-theme=dark] {
+:root[data-theme="dark"] {
   --border-color: #2E332E;
 }
 
-.full-width, .header {
+.full-width {
   width: 100%;
 }
 
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   color: var(--color-default);
   background: var(--background-color);
 }
@@ -57,6 +63,7 @@ body {
 }
 
 .header {
+  @extend .full-width;
   padding: 25px;
   display: flex;
   justify-content: space-between;
@@ -68,30 +75,28 @@ body {
   display: flex;
   align-items: center;
   gap: 20px;
-}
-.logo span {
-  font-size: 40px;
+  span {
+    font-size: 40px;
+  }
 }
 
 .container-aside-main {
   margin: 20px 0;
   padding: 25px;
   display: grid;
-  grid-template: 1fr/100px 1fr;
+  grid-template: 1fr / 100px 1fr;
   border-top: 1px solid var(--border-color);
   border-bottom: 1px solid var(--border-color);
-}
-.container-aside-main aside {
-  padding: 20px;
-  border-right: 1px solid var(--border-color);
-}
-.container-aside-main main {
-  padding: 20px;
+  aside {
+    padding: 20px;
+    border-right: 1px solid var(--border-color);
+  }
+  main {
+    padding: 20px;
+  }
 }
 
 .footer {
   padding: 25px;
   border-top: 1px solid var(--border-color);
 }
-
-/*# sourceMappingURL=index.css.map */
