@@ -1,0 +1,44 @@
+// ====---- Variables ----==== //
+
+// ---- For light theme
+
+:root[data-theme="light"] {
+  --background-color: #FEEEEE;
+}
+
+:root[data-theme="light"] {
+  --background-for-container: #FFFFFF;
+}
+
+:root[data-theme="light"] {
+  --color-default: #956262;
+}
+
+:root[data-theme="light"] {
+  --border-color: #956262;
+}
+
+:root[data-theme="light"] {
+  --contrast-color: #FF6E6E;
+}
+
+// ---- For dark theme
+:root[data-theme="dark"] {
+  --background-color: #404740;
+}
+
+:root[data-theme="dark"] {
+  --background-for-container: #2E332E;
+}
+
+:root[data-theme="dark"] {
+  --color-default: #889562;
+}
+
+:root[data-theme="dark"] {
+  --border-color: #2E332E;
+}
+
+:root[data-theme="dark"] {
+  --contrast-color: #ccd566;
+}
