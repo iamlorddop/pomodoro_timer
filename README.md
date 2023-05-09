@@ -24,7 +24,7 @@ npm i node-sass -S
 npm run build
 ```
 
-and push with commit 'build ver. /ver/', `e.g.` 'buil ver. 1.2'
+and push with commit 'build ver. /ver/', `e.g.` 'build ver. 1.2'
 
 # Figma template
 
