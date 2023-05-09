@@ -2,6 +2,30 @@
 
 **Pomodoter** is a customizable pomodoro timer that works on desktop, desktop with chrome extension and mobile browser. The aim of this app is to help you focus on any task you are working on, such as study, writing, or coding. This app is inspired by Pomodoro Technique which is a time management method developed by Francesco Cirillo.
 
+# Get started with project
+
+Create React app
+
+```
+npx create-react-app my-app
+cd my-app
+npm start
+```
+
+And install sass
+
+```
+npm i node-sass -S
+```
+
+# Build project
+
+```
+npm run build
+```
+
+and push with commit 'build ver. /ver/', `e.g.` 'buil ver. 1.2'
+
 # Figma template
 
 [Pomodoro for developer](https://www.figma.com/file/lG8nS2SAyjqsvZJJ9YysJJ/pomodoter?type=design&node-id=0%3A1&t=QXgr47mq1RNbN3uy-1)
