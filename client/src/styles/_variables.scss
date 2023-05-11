@@ -15,11 +15,23 @@
 }
 
 :root[data-theme="light"] {
+  --color-hover-default: #513A3A;
+}
+
+:root[data-theme="light"] {
   --border-color: #956262;
 }
 
 :root[data-theme="light"] {
   --contrast-color: #FF6E6E;
+}
+
+:root[data-theme="light"] {
+  --background-button: #FEEEEE;
+}
+
+:root[data-theme="light"] {
+  --hover-background-button: #FAC7C7;
 }
 
 // ---- For dark theme
@@ -36,9 +48,21 @@
 }
 
 :root[data-theme="dark"] {
+  --color-hover-default: #CCD566;
+}
+
+:root[data-theme="dark"] {
   --border-color: #2E332E;
 }
 
 :root[data-theme="dark"] {
   --contrast-color: #ccd566;
+}
+
+:root[data-theme="dark"] {
+  --background-button: #889562;
+}
+
+:root[data-theme="dark"] {
+  --hover-background-button: #4C514C;
 }

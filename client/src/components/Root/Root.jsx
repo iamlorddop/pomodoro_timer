@@ -2,8 +2,9 @@ import '../../index.scss'
 import logo from '../../assets/img/logo.svg'
 import { ThemeContext, themes } from '../../contexts/ThemeContext'
 import Toggle from '../Toggle'
-import Pomodoro from "../Pomodoro/Pomodoro";
-import AddTask from "../AddTask/AddTask";
+import Pomodoro from "../Pomodoro";
+import AddTask from "../AddTask";
+import SocialIcons from "../SocialIcons";
 
 function Root() {
   return (
@@ -31,15 +32,17 @@ function Root() {
               </aside>
               <main>
                   <h1 className='hidden'>An online Pomodoro Timer to boost your productivity</h1>
-                  <Pomodoro/>
-                  <AddTask/>
+                  <div className='pomodoro-container'>
+                      <Pomodoro/>
+                      <AddTask/>
+                  </div>
                   <section className='information'>
                       <h2 className='title'>What is Pomodoter?</h2>
-                      <p className='text'>Pomodoter is a customizable pomodoro timer that works on desktop, chrome extension and mobile browser. The aim of this app is to help you focus on any task you are working on, such as study, writing, or coding. This app is inspired by <a href='https://www.techtarget.com/whatis/definition/pomodoro-technique#:~:text=The%20Pomodoro%20Technique%20is%20a,after%20four%20consecutive%20work%20intervals.' className='text-link'>Pomodoro Technique</a> which is a time management method developed by Francesco Cirillo.</p>
+                      <p className='text'>Pomodoter is a customizable pomodoro timer that works on desktop, chrome extension and mobile browser. The aim of this app is to help you focus on any task you are working on, such as study, writing, or coding. This app is inspired by <a href='https://www.techtarget.com/whatis/definition/pomodoro-technique#:~:text=The%20Pomodoro%20Technique%20is%20a,after%20four%20consecutive%20work%20intervals.' target='_blank' className='text-link'>Pomodoro Technique</a> which is a time management method developed by Francesco Cirillo.</p>
                   </section>
                   <section className='information'>
                       <h2 className='title'>What is Pomodoro Technique?</h2>
-                      <p className='text'>The Pomodoro Technique is created by Francesco Cirillo for a more productive way to work and study. The technique uses a timer to break down work into intervals, traditionally 25 minutes in length, separated by short breaks. Each interval is known as a pomodoro, from the Italian word for 'tomato', after the tomato-shaped kitchen timer that Cirillo used as a university student. - <a href='https://en.wikipedia.org/wiki/Pomodoro_Technique' className='text-link'>Wikipedia</a></p>
+                      <p className='text'>The Pomodoro Technique is created by Francesco Cirillo for a more productive way to work and study. The technique uses a timer to break down work into intervals, traditionally 25 minutes in length, separated by short breaks. Each interval is known as a pomodoro, from the Italian word for 'tomato', after the tomato-shaped kitchen timer that Cirillo used as a university student. - <a href='https://en.wikipedia.org/wiki/Pomodoro_Technique' target='_blank' className='text-link'>Wikipedia</a></p>
                   </section>
                   <section className='information'>
                       <h2 className='title'>How to use the Pomodoro Timer?</h2>
@@ -57,10 +60,12 @@ function Root() {
           <footer className='container footer'>
               <div className='footer-navigation'>
                   <a href='#' className='text'>Home</a>
-                  <a href='#' className='text'>Contact</a>
+                  <a href='mailto:pomodoter@gmail.com' className='text'>Contact us</a>
                   <a href='#' className='text'>Pomodoro timer</a>
               </div>
-              <div className='social'></div>
+              <div className='social'>
+                  <SocialIcons/>
+              </div>
               <div className='text'>©️ Pomodoter 2023. All Rights Reserved.</div>
           </footer>
       </>
