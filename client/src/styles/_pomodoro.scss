@@ -1,12 +1,75 @@
 @import 'reset';
 @import 'variables';
 
+%flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.pomodoro-timers-flex-container {
+  margin-bottom: 40px;
+  @extend %flex;
+  flex-wrap: wrap;
+}
+
+.pomodoro-timers {
+  @extend %flex;
+  gap: 40px;
+}
+
+.pomodoro-timer {
+  span {
+    display: block;
+    text-align: center;
+    font-size: 36px;
+    font-weight: 600;
+  }
+  span {
+    &:nth-child(1) {
+      margin-bottom: 16px;
+
+    }
+    &:nth-child(2) {
+      color: var(--contrast-color);
+    }
+  }
+}
+
+.pomodoro-timers-button-container {
+  @extend %flex;
+  flex-direction: column;
+}
+
+.pomodoro-timers-button {
+  padding: 10px 20px;
+  width: 172px;
+  font-size: 20px;
+  color: var(--border-color);
+  background: var(--background-button);
+  border-radius: 4px;
+  transition: all .3s ease;
+  cursor: pointer;
+  &:hover {
+    color: var(--color-hover-default);
+    background: var(--hover-background-button);
+  }
+}
+
+.setting-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
 .pomodoro-animation__container {
+  position: relative;
   margin-bottom: 40px;
   width: 100%;
   height: 750px;
   background: var(--background-pomodoro-container);
   border-radius: 4px;
+  overflow: hidden;
   .text {
     padding-top: 50px;
     display: flex;
@@ -19,4 +82,23 @@
     font-weight: 600;
     text-shadow: 0 9px 10px var(--text-shadow);
   }
+}
+
+.sun-or-moon {
+  position: absolute;
+  top: 50px;
+  right: 115px;
+  width: 84px;
+  height: 84px;
+  background: var(--sun-or-moon-color);
+  border-radius: 50%;
+  box-shadow: 0 0 55px 45px rgba(255, 255, 255, 0.25);
+}
+
+.table {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 160px;
+  background: var(--table-pomodoro-color);
 }

@@ -3,8 +3,10 @@
 @import 'styles/reset';
 @import 'styles/toggle';
 @import 'styles/pomodoro';
+@import 'styles/sidebar';
 
 body {
+  font-size: 1em;
   font-family: 'Montserrat', sans-serif;
   color: var(--color-default);
   background: var(--background-color);
