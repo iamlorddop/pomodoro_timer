@@ -1,0 +1,13 @@
+.aside-container {
+  overflow: hidden;
+}
+
+.navigation-list__item {
+  margin-bottom: 20px;
+  font-size: 20px;
+  transition: all .3s ease;
+  &:hover {
+    color: var(--contrast-color);
+    text-decoration: underline;
+  }
+}
