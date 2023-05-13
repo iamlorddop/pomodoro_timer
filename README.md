@@ -1,4 +1,4 @@
-# Project in progress❕❕❕
+# Project in progress❕
 # Pomodoter
 
 **Pomodoter** is a customizable pomodoro timer that works on desktop, desktop with chrome extension and mobile browser. The aim of this app is to help you focus on any task you are working on, such as study, writing, or coding. This app is inspired by Pomodoro Technique which is a time management method developed by Francesco Cirillo.
@@ -28,6 +28,10 @@ npm run build
 ```
 
 and push with commit 'build ver. /ver/', `e.g.` 'build ver. 1.2'
+
+# Deploy branch and main (master branch)
+
+Deploy is stored in the `deploy branch` and the rest of the project files are stored in the `main branch`.
 
 # Figma template
 
