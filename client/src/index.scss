@@ -6,7 +6,6 @@
 @import 'styles/sidebar';
 
 body {
-  font-size: 1em;
   font-family: 'Montserrat', sans-serif;
   color: var(--color-default);
   background: var(--background-color);
@@ -21,17 +20,17 @@ body {
 }
 
 .title {
-  margin-bottom: 40px;
+  margin-bottom: 15px;
   padding-bottom: 5px;
   display: inline-block;
-  font-size: 36px;
+  font-size: 5vw;
   border-bottom: 3px solid var(--contrast-color);
 }
 
 .button-add {
-  padding: 28px 0;
+  padding: 10px 0;
   width: 100%;
-  font-size: 26px;
+  font-size: 4.3vw;
   color: var(--border-color);
   background: var(--background-button);
   border-radius: 4px;
@@ -42,12 +41,12 @@ body {
     background: var(--hover-background-button);
   }
   span {
-    margin-left: 20px;
+    margin-left: 10px;
   }
 }
 
 .text {
-  font-size: 20px;
+  font-size: 4vw;
   line-height: 30px;
 }
 
@@ -66,9 +65,11 @@ body {
 }
 
 .header {
-  padding: 25px;
+  padding: 15px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
   align-items: center;
   border-bottom: 1px solid var(--border-color);
 }
@@ -76,44 +77,38 @@ body {
 .logo {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 10px;
+  img {
+    width: 7.6vw;
+  }
   span {
-    font-size: 36px;
+    font-size: 6.4vw;
   }
 }
 
-.container-aside-main {
+.main {
   margin: 20px 0;
-  padding: 25px 0;
-  display: grid;
-  grid-template: 1fr / 200px 1fr;
+  padding: 20px 15px;
   border-top: 1px solid var(--border-color);
   border-bottom: 1px solid var(--border-color);
-  aside {
-    padding: 0 20px;
-    border-right: 1px solid var(--color-default);
-  }
-  main {
-    padding: 0 40px;
-  }
 }
 
 .pomodoro-container {
-  margin-bottom: 100px;
+  margin-bottom: 30px;
 }
 
 .information {
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 
 .footer {
-  padding: 25px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   border-top: 1px solid var(--border-color);
   .text {
-    font-size: 16px;
+    font-size: 3.2vw;
   }
 }
 
@@ -132,15 +127,76 @@ body {
 }
 
 .social {
-  margin: 20px 0 30px;
+  margin: 15px 0;
   display: flex;
   gap: 40px;
 }
 
 .social-link {
-  font-size: 68px;
+  font-size: 10vw;
   transition: color .3s ease;
   &:hover {
     color: var(--color-hover-default);
+  }
+}
+
+@media(min-width: 600px) {
+  .title {
+    margin-bottom: 40px;
+    font-size: 36px;
+  }
+
+  .text {
+    font-size: 20px;
+  }
+
+  .header {
+    padding: 25px;
+    justify-content: space-between;
+  }
+
+  .logo {
+    gap: 20px;
+    img {
+      width: auto;
+    }
+    span {
+      font-size: 36px;
+    }
+  }
+
+  .main {
+    padding: 25px 40px;
+  }
+
+  .pomodoro-container {
+    margin-bottom: 100px;
+  }
+
+  .information {
+    margin-bottom: 50px;
+  }
+
+  .button-add {
+    padding: 28px 0;
+    font-size: 26px;
+    span {
+      margin-left: 20px;
+    }
+  }
+
+  .footer {
+    padding: 25px;
+    .text {
+      font-size: 16px;
+    }
+  }
+
+  .social {
+    margin: 20px 0 30px;
+  }
+
+  .social-link {
+    font-size: 68px;
   }
 }

@@ -7,26 +7,24 @@
 }
 
 .pomodoro-timers-flex-container {
-  margin-bottom: 40px;
-  @extend %flex;
-  flex-wrap: wrap;
+  margin-bottom: 20px;
 }
 
 .pomodoro-timers {
+  margin-bottom: 20px;
   @extend %flex;
-  gap: 40px;
 }
 
 .pomodoro-timer {
   span {
     display: block;
     text-align: center;
-    font-size: 36px;
+    font-size: 4vw;
     font-weight: 600;
   }
   span {
     &:nth-child(1) {
-      margin-bottom: 16px;
+      margin-bottom: 5px;
 
     }
     &:nth-child(2) {
@@ -37,13 +35,12 @@
 
 .pomodoro-timers-button-container {
   @extend %flex;
-  flex-direction: column;
 }
 
 .pomodoro-timers-button {
   padding: 10px 20px;
-  width: 172px;
-  font-size: 20px;
+  width: 124px;
+  font-size: 4.3vw;
   color: var(--border-color);
   background: var(--background-button);
   border-radius: 4px;
@@ -64,21 +61,20 @@
 
 .pomodoro-animation__container {
   position: relative;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   width: 100%;
-  height: 750px;
+  height: 370px;
   background: var(--background-pomodoro-container);
   border-radius: 4px;
   overflow: hidden;
   .text {
-    padding-top: 50px;
+    padding-top: 30px;
     display: flex;
     flex-direction: column;
     gap: 20px;
     align-items: center;
     color: #FFFFFF;
-    font-size: 54px;
-    line-height: 68px;
+    font-size: 6.5vw;
     font-weight: 600;
     text-shadow: 0 9px 10px var(--text-shadow);
   }
@@ -86,8 +82,8 @@
 
 .sun-or-moon {
   position: absolute;
-  top: 50px;
-  right: 115px;
+  top: -25px;
+  right: -35px;
   width: 84px;
   height: 84px;
   background: var(--sun-or-moon-color);
@@ -99,6 +95,57 @@
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 160px;
+  height: 100px;
   background: var(--table-pomodoro-color);
+}
+
+@media(min-width: 600px) {
+  .pomodoro-timers-flex-container {
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .pomodoro-timers-button-container {
+    flex-direction: column;
+  }
+
+  .pomodoro-timers {
+    gap: 40px;
+  }
+
+  .pomodoro-timer {
+    span {
+      font-size: 36px;
+    }
+    span {
+      &:nth-child(1) {
+        margin-bottom: 16px;
+      }
+    }
+  }
+
+  .pomodoro-timers-button {
+    width: 172px;
+    font-size: 20px;
+  }
+
+  .pomodoro-animation__container {
+    margin-bottom: 40px;
+    height: 750px;
+    .text {
+      padding-top: 50px;
+      font-size: 54px;
+      line-height: 68px;
+    }
+  }
+
+  .sun-or-moon {
+    top: 50px;
+    right: 115px;
+  }
+
+  .table {
+    height: 160px;
+  }
 }

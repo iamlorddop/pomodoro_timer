@@ -5,7 +5,6 @@ import Toggle from '../Toggle'
 import Pomodoro from "../Pomodoro";
 import AddTask from "../AddTask";
 import SocialIcons from "../SocialIcons";
-import Sidebar from "../Sidebar";
 
 function Root() {
   return (
@@ -28,8 +27,7 @@ function Root() {
               </ThemeContext.Consumer>
           </header>
           <div className='container container-aside-main'>
-              <Sidebar/>
-              <main>
+              <main className='container main'>
                   <h1 className='hidden'>An online Pomodoro Timer to boost your productivity</h1>
                   <div className='pomodoro-container'>
                       <Pomodoro/>

@@ -227,41 +227,36 @@ button {
   --sun-or-moon-color: #F2F2F2;
 }
 
-.pomodoro-timers-button-container, .pomodoro-timers, .pomodoro-timers-flex-container {
+.pomodoro-timers-button-container, .pomodoro-timers {
   display: flex;
   justify-content: space-between;
 }
 
 .pomodoro-timers-flex-container {
-  margin-bottom: 40px;
-  flex-wrap: wrap;
+  margin-bottom: 20px;
 }
 
 .pomodoro-timers {
-  gap: 40px;
+  margin-bottom: 20px;
 }
 
 .pomodoro-timer span {
   display: block;
   text-align: center;
-  font-size: 36px;
+  font-size: 4vw;
   font-weight: 600;
 }
 .pomodoro-timer span:nth-child(1) {
-  margin-bottom: 16px;
+  margin-bottom: 5px;
 }
 .pomodoro-timer span:nth-child(2) {
   color: var(--contrast-color);
 }
 
-.pomodoro-timers-button-container {
-  flex-direction: column;
-}
-
 .pomodoro-timers-button {
   padding: 10px 20px;
-  width: 172px;
-  font-size: 20px;
+  width: 124px;
+  font-size: 4.3vw;
   color: var(--border-color);
   background: var(--background-button);
   border-radius: 4px;
@@ -282,30 +277,29 @@ button {
 
 .pomodoro-animation__container {
   position: relative;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   width: 100%;
-  height: 750px;
+  height: 370px;
   background: var(--background-pomodoro-container);
   border-radius: 4px;
   overflow: hidden;
 }
 .pomodoro-animation__container .text {
-  padding-top: 50px;
+  padding-top: 30px;
   display: flex;
   flex-direction: column;
   gap: 20px;
   align-items: center;
   color: #FFFFFF;
-  font-size: 54px;
-  line-height: 68px;
+  font-size: 6.5vw;
   font-weight: 600;
   text-shadow: 0 9px 10px var(--text-shadow);
 }
 
 .sun-or-moon {
   position: absolute;
-  top: 50px;
-  right: 115px;
+  top: -25px;
+  right: -35px;
   width: 84px;
   height: 84px;
   background: var(--sun-or-moon-color);
@@ -317,10 +311,49 @@ button {
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 160px;
+  height: 100px;
   background: var(--table-pomodoro-color);
 }
 
+@media (min-width: 600px) {
+  .pomodoro-timers-flex-container {
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .pomodoro-timers-button-container {
+    flex-direction: column;
+  }
+  .pomodoro-timers {
+    gap: 40px;
+  }
+  .pomodoro-timer span {
+    font-size: 36px;
+  }
+  .pomodoro-timer span:nth-child(1) {
+    margin-bottom: 16px;
+  }
+  .pomodoro-timers-button {
+    width: 172px;
+    font-size: 20px;
+  }
+  .pomodoro-animation__container {
+    margin-bottom: 40px;
+    height: 750px;
+  }
+  .pomodoro-animation__container .text {
+    padding-top: 50px;
+    font-size: 54px;
+    line-height: 68px;
+  }
+  .sun-or-moon {
+    top: 50px;
+    right: 115px;
+  }
+  .table {
+    height: 160px;
+  }
+}
 .aside-container {
   overflow: hidden;
 }
@@ -336,7 +369,6 @@ button {
 }
 
 body {
-  font-size: 1em;
   font-family: "Montserrat", sans-serif;
   color: var(--color-default);
   background: var(--background-color);
@@ -351,17 +383,17 @@ body {
 }
 
 .title {
-  margin-bottom: 40px;
+  margin-bottom: 15px;
   padding-bottom: 5px;
   display: inline-block;
-  font-size: 36px;
+  font-size: 5vw;
   border-bottom: 3px solid var(--contrast-color);
 }
 
 .button-add {
-  padding: 28px 0;
+  padding: 10px 0;
   width: 100%;
-  font-size: 26px;
+  font-size: 4.3vw;
   color: var(--border-color);
   background: var(--background-button);
   border-radius: 4px;
@@ -373,11 +405,11 @@ body {
   background: var(--hover-background-button);
 }
 .button-add span {
-  margin-left: 20px;
+  margin-left: 10px;
 }
 
 .text {
-  font-size: 20px;
+  font-size: 4vw;
   line-height: 30px;
 }
 
@@ -396,9 +428,11 @@ body {
 }
 
 .header {
-  padding: 25px;
+  padding: 15px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
   align-items: center;
   border-bottom: 1px solid var(--border-color);
 }
@@ -406,45 +440,39 @@ body {
 .logo {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 10px;
+}
+.logo img {
+  width: 7.6vw;
 }
 .logo span {
-  font-size: 36px;
+  font-size: 6.4vw;
 }
 
-.container-aside-main {
+.main {
   margin: 20px 0;
-  padding: 25px 0;
-  display: grid;
-  grid-template: 1fr/200px 1fr;
+  padding: 20px 15px;
   border-top: 1px solid var(--border-color);
   border-bottom: 1px solid var(--border-color);
 }
-.container-aside-main aside {
-  padding: 0 20px;
-  border-right: 1px solid var(--color-default);
-}
-.container-aside-main main {
-  padding: 0 40px;
-}
 
 .pomodoro-container {
-  margin-bottom: 100px;
+  margin-bottom: 30px;
 }
 
 .information {
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 
 .footer {
-  padding: 25px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   border-top: 1px solid var(--border-color);
 }
 .footer .text {
-  font-size: 16px;
+  font-size: 3.2vw;
 }
 
 .footer-navigation a {
@@ -460,17 +488,68 @@ body {
 }
 
 .social {
-  margin: 20px 0 30px;
+  margin: 15px 0;
   display: flex;
   gap: 40px;
 }
 
 .social-link {
-  font-size: 68px;
+  font-size: 10vw;
   transition: color 0.3s ease;
 }
 .social-link:hover {
   color: var(--color-hover-default);
+}
+
+@media (min-width: 600px) {
+  .title {
+    margin-bottom: 40px;
+    font-size: 36px;
+  }
+  .text {
+    font-size: 20px;
+  }
+  .header {
+    padding: 25px;
+    justify-content: space-between;
+  }
+  .logo {
+    gap: 20px;
+  }
+  .logo img {
+    width: auto;
+  }
+  .logo span {
+    font-size: 36px;
+  }
+  .main {
+    padding: 25px 40px;
+  }
+  .pomodoro-container {
+    margin-bottom: 100px;
+  }
+  .information {
+    margin-bottom: 50px;
+  }
+  .button-add {
+    padding: 28px 0;
+    font-size: 26px;
+  }
+  .button-add span {
+    margin-left: 20px;
+  }
+  .footer {
+    padding: 25px;
+  }
+  .footer .text {
+    font-size: 16px;
+  }
+  .social {
+    margin: 20px 0 30px;
+  }
+  .social-link {
+    font-size: 68px;
+  }
 }
 
 /*# sourceMappingURL=index.css.map */
