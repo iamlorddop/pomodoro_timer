@@ -255,7 +255,7 @@ button {
 
 .pomodoro-timers-button {
   padding: 10px 20px;
-  width: 124px;
+  width: 134px;
   font-size: 4.3vw;
   color: var(--border-color);
   background: var(--background-button);
@@ -430,8 +430,7 @@ body {
 .header {
   padding: 15px;
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 14px;
   align-items: center;
   border-bottom: 1px solid var(--border-color);
@@ -511,6 +510,7 @@ body {
   }
   .header {
     padding: 25px;
+    flex-direction: row;
     justify-content: space-between;
   }
   .logo {
