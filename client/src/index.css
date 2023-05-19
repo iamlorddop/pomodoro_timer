@@ -15,6 +15,10 @@
   --text-shadow: #1A7AD3;
   --table-pomodoro-color: linear-gradient(270deg, rgba(151, 70, 53, 0.9) 8%, #9C4735 84%);
   --sun-or-moon-color: #FFF8DD;
+  --task-done-hover-color: #513A3A;
+  --note-bg-color: #FAC7C7;
+  --popup-list-bg: #FFFFFF;
+  --popup-list-box-shadow: rgba(251, 156, 156, 0.6);
 }
 
 :root[data-theme=dark] {
@@ -33,6 +37,10 @@
   --text-shadow: #082743;
   --table-pomodoro-color: linear-gradient(270deg, rgba(121, 62, 49, 0.9) 8%, #522E26 84%);
   --sun-or-moon-color: #F2F2F2;
+  --task-done-hover-color: #0F110F;
+  --note-bg-color: #6D784C;
+  --popup-list-bg: #CCD566;
+  --popup-list-box-shadow: rgba(46, 51, 46, 0.6);
 }
 
 * {
@@ -93,6 +101,10 @@ button {
   --text-shadow: #1A7AD3;
   --table-pomodoro-color: linear-gradient(270deg, rgba(151, 70, 53, 0.9) 8%, #9C4735 84%);
   --sun-or-moon-color: #FFF8DD;
+  --task-done-hover-color: #513A3A;
+  --note-bg-color: #FAC7C7;
+  --popup-list-bg: #FFFFFF;
+  --popup-list-box-shadow: rgba(251, 156, 156, 0.6);
 }
 
 :root[data-theme=dark] {
@@ -111,6 +123,10 @@ button {
   --text-shadow: #082743;
   --table-pomodoro-color: linear-gradient(270deg, rgba(121, 62, 49, 0.9) 8%, #522E26 84%);
   --sun-or-moon-color: #F2F2F2;
+  --task-done-hover-color: #0F110F;
+  --note-bg-color: #6D784C;
+  --popup-list-bg: #CCD566;
+  --popup-list-box-shadow: rgba(46, 51, 46, 0.6);
 }
 
 .switch-theme__container-icons, .switch-theme__container-radio {
@@ -207,6 +223,10 @@ button {
   --text-shadow: #1A7AD3;
   --table-pomodoro-color: linear-gradient(270deg, rgba(151, 70, 53, 0.9) 8%, #9C4735 84%);
   --sun-or-moon-color: #FFF8DD;
+  --task-done-hover-color: #513A3A;
+  --note-bg-color: #FAC7C7;
+  --popup-list-bg: #FFFFFF;
+  --popup-list-box-shadow: rgba(251, 156, 156, 0.6);
 }
 
 :root[data-theme=dark] {
@@ -225,6 +245,10 @@ button {
   --text-shadow: #082743;
   --table-pomodoro-color: linear-gradient(270deg, rgba(121, 62, 49, 0.9) 8%, #522E26 84%);
   --sun-or-moon-color: #F2F2F2;
+  --task-done-hover-color: #0F110F;
+  --note-bg-color: #6D784C;
+  --popup-list-bg: #CCD566;
+  --popup-list-box-shadow: rgba(46, 51, 46, 0.6);
 }
 
 .pomodoro-timers-button-container, .pomodoro-timers {
@@ -307,6 +331,27 @@ button {
   box-shadow: 0 0 55px 45px rgba(255, 255, 255, 0.25);
 }
 
+.pomodoro-animation__container__pomodoro-image {
+  position: absolute;
+  left: 50%;
+  bottom: 10%;
+  transform: translateX(-50%);
+  z-index: 4;
+  overflow: hidden;
+}
+.pomodoro-animation__container__pomodoro-image::before {
+  content: "";
+  position: absolute;
+  bottom: 150px;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  border-bottom: 10px dashed #FFFFFF;
+}
+.pomodoro-animation__container__pomodoro-image img {
+  width: 9.5rem;
+}
+
 .table {
   position: absolute;
   bottom: 0;
@@ -354,6 +399,18 @@ button {
     height: 160px;
   }
 }
+@media (min-width: 600px) {
+  .pomodoro-animation__container__pomodoro-image {
+    position: absolute;
+    left: 50%;
+    bottom: 10%;
+    transform: translateX(-50%);
+    z-index: 4;
+  }
+  .pomodoro-animation__container__pomodoro-image img {
+    width: 21.375rem;
+  }
+}
 .aside-container {
   overflow: hidden;
 }
@@ -369,6 +426,7 @@ button {
 }
 
 body {
+  position: relative;
   font-family: "Montserrat", sans-serif;
   color: var(--color-default);
   background: var(--background-color);
@@ -376,6 +434,32 @@ body {
 
 .hidden {
   display: none;
+}
+
+.popup-list-container {
+  position: absolute;
+  top: 44%;
+  right: 2%;
+  background: var(--popup-list-bg);
+  box-shadow: 0 0 8px var(--popup-list-box-shadow);
+  border-radius: 4px;
+  z-index: 2;
+}
+
+.popup-list__item {
+  padding: 10px 20px;
+}
+.popup-list__item button {
+  color: var(--border-color);
+  font-size: 4vw;
+  background: none;
+  cursor: pointer;
+}
+.popup-list__item button span {
+  margin-right: 20px;
+}
+.popup-list__item:hover {
+  background: var(--background-button);
 }
 
 .container {
@@ -388,6 +472,131 @@ body {
   display: inline-block;
   font-size: 5vw;
   border-bottom: 3px solid var(--contrast-color);
+}
+
+.task-text {
+  margin-bottom: 10px;
+  font-size: 4vw;
+  text-align: center;
+}
+
+.more-button {
+  width: 35px;
+  height: 35px;
+  background: var(--background-button);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.more-button:hover {
+  background: var(--hover-background-button);
+}
+.more-button:hover span {
+  background: var(--color-hover-default);
+}
+.more-button:hover span::before, .more-button:hover span::after {
+  background: var(--color-hover-default);
+}
+.more-button span {
+  position: relative;
+  margin: auto;
+  display: block;
+  width: 5px;
+  height: 5px;
+  background: var(--border-color);
+}
+.more-button span::before {
+  top: -8px;
+}
+.more-button span::before, .more-button span::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 5px;
+  height: 5px;
+  background: var(--border-color);
+}
+.more-button span::after {
+  bottom: -8px;
+}
+
+.tasks-wrap {
+  padding: 20px 0;
+  font-size: 4vw;
+}
+
+.tasks-tasks-title {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 3px solid var(--color-default);
+}
+
+.tasks-information {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  border-top: 3px solid var(--color-default);
+}
+
+.task-container {
+  margin: 10px 0;
+  padding: 20px;
+  color: var(--border-color);
+  background: var(--background-button);
+  border-radius: 4px;
+  transition: border-left 0.4s ease;
+}
+.task-container:hover {
+  cursor: grab;
+  border-left: 10px solid var(--note-bg-color);
+}
+.task-container .more-button {
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+.task-container .more-button:hover {
+  border: 1px solid var(--color-hover-default);
+}
+
+.task-container__item {
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task-container__item__subitem {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  font-size: 5.5vw;
+  font-weight: 600;
+}
+
+.task-container__item__tasks-name button {
+  font-size: 40px;
+  color: var(--border-color);
+  background: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+.task-container__item__tasks-name button:hover {
+  color: var(--task-done-hover-color);
+}
+
+.task-container__note {
+  margin: 20px 0;
+  padding: 20px;
+  background: var(--note-bg-color);
+  border-radius: 4px;
+}
+
+.task-container__project-name {
+  font-size: 24px;
+  font-weight: 600;
 }
 
 .button-add {
@@ -501,6 +710,9 @@ body {
 }
 
 @media (min-width: 600px) {
+  .popup-list__item button {
+    font-size: 16px;
+  }
   .title {
     margin-bottom: 40px;
     font-size: 36px;
@@ -530,6 +742,33 @@ body {
   }
   .information {
     margin-bottom: 50px;
+  }
+  .more-button {
+    width: 40px;
+    height: 40px;
+  }
+  .more-button span {
+    width: 6px;
+    height: 6px;
+  }
+  .more-button span::before {
+    top: -10px;
+  }
+  .more-button span::before, .more-button span::after {
+    width: 6px;
+    height: 6px;
+  }
+  .more-button span::after {
+    bottom: -10px;
+  }
+  .task-container__item__subitem {
+    font-size: 24px;
+  }
+  .tasks-wrap {
+    font-size: 24px;
+  }
+  .task-text {
+    font-size: 20px;
   }
   .button-add {
     padding: 28px 0;

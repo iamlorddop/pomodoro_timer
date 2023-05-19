@@ -6,6 +6,7 @@
 @import 'styles/sidebar';
 
 body {
+  position: relative;
   font-family: 'Montserrat', sans-serif;
   color: var(--color-default);
   background: var(--background-color);
@@ -13,6 +14,32 @@ body {
 
 .hidden {
    display: none;
+}
+
+.popup-list-container {
+  position: absolute;
+  top: 44%;
+  right: 2%;
+  background: var(--popup-list-bg);
+  box-shadow: 0 0 8px var(--popup-list-box-shadow);
+  border-radius: 4px;
+  z-index: 2;
+}
+
+.popup-list__item {
+  padding: 10px 20px;
+  button {
+    color: var(--border-color);
+    font-size: 4vw;
+    background: none;
+    cursor: pointer;
+    span {
+      margin-right: 20px;
+    }
+  }
+  &:hover {
+    background: var(--background-button);
+  }
 }
 
 .container {
@@ -25,6 +52,133 @@ body {
   display: inline-block;
   font-size: 5vw;
   border-bottom: 3px solid var(--contrast-color);
+}
+
+.task-text {
+  margin-bottom: 10px;
+  font-size: 4vw;
+  text-align: center;
+}
+
+.more-button {
+  width: 35px;
+  height: 35px;
+  background: var(--background-button);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all .3s ease;
+  &:hover {
+    background: var(--hover-background-button);
+    span {
+      background: var(--color-hover-default);
+      &::before, &::after {
+        background: var(--color-hover-default);
+      }
+    }
+  }
+  span {
+    position: relative;
+    margin: auto;
+    display: block;
+    width: 5px;
+    height: 5px;
+    background: var(--border-color);
+    &::before {
+      top: -8px;
+    }
+    &::before, &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 5px;
+      height: 5px;
+      background: var(--border-color);
+    }
+    &::after {
+      bottom: -8px;
+    }
+  }
+}
+
+.tasks-wrap {
+  padding: 20px 0;
+  font-size: 4vw;
+}
+
+.tasks-tasks-title {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 3px solid var(--color-default);
+}
+
+.tasks-information {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  border-top: 3px solid var(--color-default);
+}
+
+.task-container {
+  margin: 10px 0;
+  padding: 20px;
+  color: var(--border-color);
+  background: var(--background-button);
+  border-radius: 4px;
+  transition: border-left .4s ease;
+  &:hover {
+    cursor: grab;
+    border-left: 10px solid var(--note-bg-color);
+  }
+  .more-button {
+    border: 1px solid var(--border-color);
+    transition: all .3s ease;
+    &:hover {
+      border: 1px solid var(--color-hover-default);
+    }
+  }
+}
+
+.task-container__item {
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task-container__item__subitem {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  font-size: 5.5vw;
+  font-weight: 600;
+}
+
+.task-container__item__tasks-name {
+  button {
+    font-size: 40px;
+    color: var(--border-color);
+    background: none;
+    cursor: pointer;
+    transition: color .3s ease;
+    &:hover {
+      color: var(--task-done-hover-color);
+    }
+  }
+}
+
+.task-container__note {
+  margin: 20px 0;
+  padding: 20px;
+  background: var(--note-bg-color);
+  border-radius: 4px;
+}
+
+.task-container__project-name {
+  font-size: 24px;
+  font-weight: 600;
 }
 
 .button-add {
@@ -140,6 +294,11 @@ body {
 }
 
 @media(min-width: 600px) {
+  .popup-list__item {
+    button {
+      font-size: 16px
+    }
+  }
   .title {
     margin-bottom: 40px;
     font-size: 36px;
@@ -175,6 +334,37 @@ body {
 
   .information {
     margin-bottom: 50px;
+  }
+
+  .more-button {
+    width: 40px;
+    height: 40px;
+    span {
+      width: 6px;
+      height: 6px;
+      &::before {
+        top: -10px;
+      }
+      &::before, &::after {
+        width: 6px;
+        height: 6px;
+      }
+      &::after {
+        bottom: -10px;
+      }
+    }
+  }
+
+  .task-container__item__subitem {
+    font-size: 24px;
+  }
+
+  .tasks-wrap {
+    font-size: 24px;
+  }
+
+  .task-text {
+    font-size: 20px;
   }
 
   .button-add {

@@ -91,6 +91,27 @@
   box-shadow: 0 0 55px 45px rgba(255, 255, 255, 0.25);
 }
 
+.pomodoro-animation__container__pomodoro-image {
+  position: absolute;
+  left: 50%;
+  bottom: 10%;
+  transform: translateX(-50%);
+  z-index: 4;
+  overflow: hidden;
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 150px;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    border-bottom: 10px dashed #FFFFFF;
+  }
+  img {
+    width: 9.5rem;
+  }
+}
+
 .table {
   position: absolute;
   bottom: 0;
@@ -147,5 +168,18 @@
 
   .table {
     height: 160px;
+  }
+}
+
+@media (min-width: 600px) {
+  .pomodoro-animation__container__pomodoro-image {
+    position: absolute;
+    left: 50%;
+    bottom: 10%;
+    transform: translateX(-50%);
+    z-index: 4;
+    img {
+      width: 21.375rem;
+    }
   }
 }

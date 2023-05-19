@@ -2,6 +2,7 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
+import pomodoro from '../assets/img/pomodoro.png'
 
 library.add(fab)
 
@@ -41,6 +42,9 @@ export default function Pomodoro() {
                     </span>
                 </p>
                 <div className='sun-or-moon'></div>
+                <div className='pomodoro-animation__container__pomodoro-image'>
+                    <img src={pomodoro} alt='pomodoro'/>
+                </div>
                 <div className='table'></div>
             </div>
         </>

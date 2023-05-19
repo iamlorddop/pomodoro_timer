@@ -17,6 +17,10 @@
   --text-shadow: #1A7AD3;
   --table-pomodoro-color: linear-gradient(270deg, rgba(151, 70, 53, 0.9) 8%, #9C4735 84%);
   --sun-or-moon-color: #FFF8DD;
+  --task-done-hover-color: #513A3A;
+  --note-bg-color: #FAC7C7;
+  --popup-list-bg: #FFFFFF;
+  --popup-list-box-shadow: rgba(251, 156, 156, 0.6);
 }
 
 // ---- For dark theme
@@ -36,4 +40,8 @@
   --text-shadow: #082743;
   --table-pomodoro-color: linear-gradient(270deg, rgba(121, 62, 49, 0.9) 8%, #522E26 84%);
   --sun-or-moon-color: #F2F2F2;
+  --task-done-hover-color: #0F110F;
+  --note-bg-color: #6D784C;
+  --popup-list-bg: #CCD566;
+  --popup-list-box-shadow: rgba(46, 51, 46, 0.6);
 }
