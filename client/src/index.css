@@ -339,17 +339,19 @@ button {
   z-index: 4;
   overflow: hidden;
 }
-.pomodoro-animation__container__pomodoro-image::before {
-  content: "";
-  position: absolute;
-  bottom: 150px;
-  left: 0;
-  width: 100%;
-  height: 10px;
-  border-bottom: 10px dashed #FFFFFF;
-}
 .pomodoro-animation__container__pomodoro-image img {
   width: 9.5rem;
+}
+
+.pomodoro-animation__container__pomodoro-image__eyes {
+  position: absolute;
+  left: 50%;
+  top: 34%;
+  width: 4.5rem;
+  height: 16px;
+  background: url("../img/eyes-open-pomodoro.png");
+  background-size: cover;
+  transform: translateX(-50%);
 }
 
 .table {
@@ -402,13 +404,16 @@ button {
 @media (min-width: 600px) {
   .pomodoro-animation__container__pomodoro-image {
     position: absolute;
-    left: 50%;
-    bottom: 10%;
-    transform: translateX(-50%);
     z-index: 4;
   }
   .pomodoro-animation__container__pomodoro-image img {
     width: 21.375rem;
+  }
+  .pomodoro-animation__container__pomodoro-image__eyes {
+    width: 12rem;
+    height: 42px;
+    background: url("../img/eyes-open-pomodoro.png");
+    background-size: cover;
   }
 }
 .aside-container {

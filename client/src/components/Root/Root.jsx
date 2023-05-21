@@ -1,5 +1,4 @@
 import '../../index.scss'
-import logo from '../../assets/img/logo.svg'
 import { ThemeContext, themes } from '../../contexts/ThemeContext'
 import Toggle from '../Toggle'
 import Pomodoro from "../Pomodoro";
@@ -11,7 +10,7 @@ function Root() {
       <>
           <header className='header container'>
               <a href='#' className='logo'>
-                  <img src={logo} alt='pomodoro logo'/>
+                  <img src={process.env.PUBLIC_URL + 'img/logo.svg'} alt='pomodoro logo'/>
                   <span>pomodoter</span>
               </a>
               <ThemeContext.Consumer>

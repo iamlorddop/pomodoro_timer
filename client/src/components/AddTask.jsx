@@ -6,6 +6,8 @@ import { fas } from '@fortawesome/free-solid-svg-icons'
 
 library.add(fas)
 export default function AddTask() {
+    const count = 0
+    const [todoinput, setTodoinput] = useState(0)
     const [todo, setTodo] = useState('')
     const [todos, setTodos] = useState([])
     const addTodo = () => {
@@ -20,7 +22,12 @@ export default function AddTask() {
         })
         setTodos(newTodos)
     }
-    const AddTask = () => {
+
+    const handleClick = () => {
+        setTodoinput((count) => count + 1)
+    }
+
+    const AddTaskInput = () => {
         return (
             <div className='task-container'>
                 <div className='task-container__item'>
@@ -82,8 +89,8 @@ export default function AddTask() {
                     <span></span>
                 </button>
             </div>
-            <AddTask/>
-            <button className='button-add' onClick={addTodo}>
+            {[...Array(todoinput)].map((item, i) => <AddTaskInput key={i}/>)}
+            <button className='button-add' onClick={handleClick}>
                 <FontAwesomeIcon icon="fa-solid fa-circle-plus" />
                 <span>Add task</span>
             </button>
