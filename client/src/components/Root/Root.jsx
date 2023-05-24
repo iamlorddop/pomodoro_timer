@@ -2,7 +2,7 @@ import '../../index.scss'
 import { ThemeContext, themes } from '../../contexts/ThemeContext'
 import Toggle from '../Toggle'
 import Pomodoro from "../Pomodoro";
-import AddTask from "../AddTask";
+import AddTaskPanel from "../AddTaskPanel";
 import SocialIcons from "../SocialIcons";
 
 function Root() {
@@ -30,7 +30,7 @@ function Root() {
                   <h1 className='hidden'>An online Pomodoro Timer to boost your productivity</h1>
                   <div className='pomodoro-container'>
                       <Pomodoro/>
-                      <AddTask/>
+                      <AddTaskPanel/>
                   </div>
                   <section className='information'>
                       <h2 className='title'>What is Pomodoter?</h2>

@@ -1,0 +1,318 @@
+
+.task-text {
+  margin-bottom: 10px;
+  font-size: 4vw;
+  text-align: center;
+}
+
+.more-button {
+  width: 35px;
+  height: 35px;
+  background: var(--background-button);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all .3s ease;
+  &:hover {
+    background: var(--hover-background-button);
+    span {
+      background: var(--color-hover-default);
+      &::before, &::after {
+        background: var(--color-hover-default);
+      }
+    }
+  }
+  span {
+    position: relative;
+    margin: auto;
+    display: block;
+    width: 5px;
+    height: 5px;
+    background: var(--border-color);
+    &::before {
+      top: -8px;
+    }
+    &::before, &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 5px;
+      height: 5px;
+      background: var(--border-color);
+    }
+    &::after {
+      bottom: -8px;
+    }
+  }
+}
+
+.tasks-wrap {
+  padding: 20px 0;
+  font-size: 4vw;
+}
+
+.tasks-tasks-title {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 3px solid var(--color-default);
+}
+
+.tasks-information {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  border-top: 3px solid var(--color-default);
+}
+
+.task-container {
+  margin: 10px 0;
+  padding: 20px 0 0;
+  color: var(--border-color);
+  background: var(--background-button);
+  border-radius: 4px;
+  overflow: hidden;
+  .more-button {
+    border: 1px solid var(--border-color);
+    transition: all .3s ease;
+    &:hover {
+      border: 1px solid var(--color-hover-default);
+    }
+  }
+}
+
+.task-container-hover {
+  padding: 20px;
+  transition: border-left .4s ease;
+  &:hover {
+    border-left: 10px solid var(--note-bg-color);
+  }
+}
+
+.grab {
+  &:hover {
+    cursor: grab;
+  }
+}
+
+.task-container__item {
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task-container__item__subitem {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  font-size: 5.5vw;
+  font-weight: 600;
+}
+
+.task-container__item__tasks-name {
+  button {
+    font-size: 40px;
+    color: var(--border-color);
+    background: none;
+    cursor: pointer;
+    transition: color .3s ease;
+    &:hover {
+      color: var(--task-done-hover-color);
+    }
+  }
+}
+
+.task-container__note {
+  margin: 20px 0;
+  padding: 20px;
+  display: block;
+  width: 100%;
+  font-size: 4vw;
+  color: var(--border-color);
+  background: var(--note-bg-color);
+  border-radius: 4px;
+  resize: none;
+}
+
+.task-container__project-name {
+  font-size: 4vw;
+  font-weight: 600;
+  input {
+    color: var(--border-color);
+    font-size: 4vw;
+    font-weight: 600;
+    background: none;
+  }
+}
+
+.task-container__input-container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  font-size: 4vw;
+  font-weight: 600;
+}
+
+.task-container__item__input-name {
+  margin-bottom: 30px;
+  font-size: 4vw;
+  font-weight: 600;
+  color: var(--border-color);
+  background: none;
+}
+
+.task-container__subitem__input-pomos input::-webkit-input-placeholder,
+.task-container__item__input-name::-webkit-input-placeholder,
+.task-container__project-name input::-webkit-input-placeholder {
+  color: var(--border-color);
+}
+
+.task-container__subitem__input-pomos input::-moz-placeholder,
+.task-container__item__input-name::-moz-placeholder,
+.task-container__project-name input::-webkit-input-placeholder {
+  color: var(--border-color);
+}
+
+.task-container__subitem__input-pomos {
+  margin: 10px 0 20px;
+  display: flex;
+  align-items: center;
+  span {
+    margin: 0 5px;
+  }
+  input {
+    padding: 5px;
+    width: 100px;
+    font-size: 4vw;
+    font-weight: 600;
+    color: var(--border-color);
+    background: var(--note-bg-color);
+    border-radius: 4px;
+  }
+}
+
+.task-container__subitem__input-adds {
+  button {
+    font-size: 4vw;
+    color: var(--color-low-opacity-button);
+    text-decoration: underline;
+    background: none;
+    cursor: pointer;
+    transition: color .3s ease;
+    &:nth-child(1) {
+      margin-right: 10px;
+    }
+    &:hover {
+      color: var(--color-hover-default);
+    }
+  }
+}
+
+.task-container__button-panel {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  background: var(--note-bg-color);
+  button {
+    padding: 10px 25px;
+    max-width: 140px;
+    min-width: 50px;
+    font-size: 4vw;
+    color: var(--border-color);
+    background: none;
+    cursor: pointer;
+    transition: color .3s ease;
+    &:hover {
+      color: var(--color-hover-default);
+    }
+  }
+  div {
+    button {
+      &:nth-child(1) {
+        margin-right: 20px;
+      }
+      &:nth-child(2) {
+        color: var(--save-button-color);
+        background: var(--color-default);
+        border-radius: 4px;
+        transition: background .3s ease;
+        &:hover {
+          background: var(--note-bg-color);
+        }
+      }
+    }
+  }
+}
+
+.button-add {
+  padding: 10px 0;
+  width: 100%;
+  font-size: 4.3vw;
+  color: var(--border-color);
+  background: var(--background-button);
+  border-radius: 4px;
+  transition: all .3s ease;
+  cursor: pointer;
+  &:hover {
+    color: var(--color-hover-default);
+    background: var(--note-bg-color);
+  }
+  span {
+    margin-left: 10px;
+  }
+}
+
+
+@media(min-width: 600px) {
+  .more-button {
+    width: 40px;
+    height: 40px;
+    span {
+      width: 6px;
+      height: 6px;
+      &::before {
+        top: -10px;
+      }
+      &::before, &::after {
+        width: 6px;
+        height: 6px;
+      }
+      &::after {
+        bottom: -10px;
+      }
+    }
+  }
+
+  .task-container__project-name,
+  .task-container__project-name input,
+  .task-container__note,
+  .task-container__subitem__input-pomos input,
+  .task-container__subitem__input-adds button,
+  .task-container__button-panel button,
+  .task-container__item__subitem,
+  .tasks-wrap,
+  .task-container__input-container,
+  .task-container__item__input-name{
+    font-size: 24px;
+  }
+
+  .task-container__button-panel {
+    button {
+      padding: 10px 35px;
+    }
+  }
+
+  .task-text {
+    font-size: 20px;
+  }
+
+  .button-add {
+    padding: 28px 0;
+    font-size: 26px;
+    span {
+      margin-left: 20px;
+    }
+  }
+}

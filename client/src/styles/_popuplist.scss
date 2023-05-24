@@ -1,0 +1,33 @@
+.popup-list-container {
+  position: absolute;
+  top: 44%;
+  right: 2%;
+  background: var(--popup-list-bg);
+  box-shadow: 0 0 8px var(--popup-list-box-shadow);
+  border-radius: 4px;
+  z-index: 2;
+}
+
+.popup-list__item {
+  padding: 10px 20px;
+  button {
+    color: var(--border-color);
+    font-size: 4vw;
+    background: none;
+    cursor: pointer;
+    span {
+      margin-right: 20px;
+    }
+  }
+  &:hover {
+    background: var(--background-button);
+  }
+}
+
+@media(min-width: 600px) {
+  .popup-list__item {
+    button {
+      font-size: 16px
+    }
+  }
+}

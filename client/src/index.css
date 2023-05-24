@@ -22,7 +22,6 @@
   --color-low-opacity: #D39696;
   --color-low-opacity-button: #D39696;
   --save-button-color: #FEEEEE;
-  --save-button-hover: #513A3A;
 }
 
 :root[data-theme=dark] {
@@ -48,7 +47,6 @@
   --color-low-opacity: #8A9668;
   --color-low-opacity-button: #676D57;
   --save-button-color: #CCD566;
-  --save-button-hover: #4C514C;
 }
 
 * {
@@ -67,7 +65,7 @@ a {
   text-decoration: none;
 }
 
-button, input {
+button, input, textarea {
   border: none;
 }
 
@@ -87,7 +85,7 @@ a {
   text-decoration: none;
 }
 
-button, input {
+button, input, textarea {
   border: none;
 }
 
@@ -114,7 +112,6 @@ button, input {
   --color-low-opacity: #D39696;
   --color-low-opacity-button: #D39696;
   --save-button-color: #FEEEEE;
-  --save-button-hover: #513A3A;
 }
 
 :root[data-theme=dark] {
@@ -140,7 +137,6 @@ button, input {
   --color-low-opacity: #8A9668;
   --color-low-opacity-button: #676D57;
   --save-button-color: #CCD566;
-  --save-button-hover: #4C514C;
 }
 
 .switch-theme__container-icons, .switch-theme__container-radio {
@@ -216,7 +212,7 @@ a {
   text-decoration: none;
 }
 
-button, input {
+button, input, textarea {
   border: none;
 }
 
@@ -243,7 +239,6 @@ button, input {
   --color-low-opacity: #D39696;
   --color-low-opacity-button: #D39696;
   --save-button-color: #FEEEEE;
-  --save-button-hover: #513A3A;
 }
 
 :root[data-theme=dark] {
@@ -269,7 +264,6 @@ button, input {
   --color-low-opacity: #8A9668;
   --color-low-opacity-button: #676D57;
   --save-button-color: #CCD566;
-  --save-button-hover: #4C514C;
 }
 
 .pomodoro-timers-button-container, .pomodoro-timers {
@@ -310,7 +304,7 @@ button, input {
 }
 .pomodoro-timers-button:hover {
   color: var(--color-hover-default);
-  background: var(--hover-background-button);
+  background: var(--note-bg-color);
 }
 
 .setting-button {
@@ -451,55 +445,6 @@ button, input {
   text-decoration: underline;
 }
 
-body {
-  position: relative;
-  font-family: "Montserrat", sans-serif;
-  color: var(--color-default);
-  background: var(--background-color);
-}
-
-.hidden {
-  display: none;
-}
-
-.popup-list-container {
-  position: absolute;
-  top: 44%;
-  right: 2%;
-  background: var(--popup-list-bg);
-  box-shadow: 0 0 8px var(--popup-list-box-shadow);
-  border-radius: 4px;
-  z-index: 2;
-}
-
-.popup-list__item {
-  padding: 10px 20px;
-}
-.popup-list__item button {
-  color: var(--border-color);
-  font-size: 4vw;
-  background: none;
-  cursor: pointer;
-}
-.popup-list__item button span {
-  margin-right: 20px;
-}
-.popup-list__item:hover {
-  background: var(--background-button);
-}
-
-.container {
-  background: var(--background-for-container);
-}
-
-.title {
-  margin-bottom: 15px;
-  padding-bottom: 5px;
-  display: inline-block;
-  font-size: 5vw;
-  border-bottom: 3px solid var(--contrast-color);
-}
-
 .task-text {
   margin-bottom: 10px;
   font-size: 4vw;
@@ -624,36 +569,56 @@ body {
 .task-container__note {
   margin: 20px 0;
   padding: 20px;
+  display: block;
+  width: 100%;
+  font-size: 4vw;
+  color: var(--border-color);
   background: var(--note-bg-color);
   border-radius: 4px;
+  resize: none;
 }
 
 .task-container__project-name {
-  font-size: 24px;
+  font-size: 4vw;
   font-weight: 600;
+}
+.task-container__project-name input {
+  color: var(--border-color);
+  font-size: 4vw;
+  font-weight: 600;
+  background: none;
 }
 
 .task-container__input-container {
   padding: 20px;
   display: flex;
   flex-direction: column;
-  font-size: 24px;
+  font-size: 4vw;
   font-weight: 600;
 }
 
 .task-container__item__input-name {
   margin-bottom: 30px;
-  font-size: 24px;
+  font-size: 4vw;
   font-weight: 600;
   color: var(--border-color);
   background: none;
 }
-.task-container__item__input-name::-webkit-input-placeholder, .task-container__item__input-name::-moz-placeholder {
+
+.task-container__subitem__input-pomos input::-webkit-input-placeholder,
+.task-container__item__input-name::-webkit-input-placeholder,
+.task-container__project-name input::-webkit-input-placeholder {
+  color: var(--border-color);
+}
+
+.task-container__subitem__input-pomos input::-moz-placeholder,
+.task-container__item__input-name::-moz-placeholder,
+.task-container__project-name input::-webkit-input-placeholder {
   color: var(--border-color);
 }
 
 .task-container__subitem__input-pomos {
-  margin-bottom: 20px;
+  margin: 10px 0 20px;
   display: flex;
   align-items: center;
 }
@@ -663,7 +628,7 @@ body {
 .task-container__subitem__input-pomos input {
   padding: 5px;
   width: 100px;
-  font-size: 24px;
+  font-size: 4vw;
   font-weight: 600;
   color: var(--border-color);
   background: var(--note-bg-color);
@@ -671,7 +636,7 @@ body {
 }
 
 .task-container__subitem__input-adds button {
-  font-size: 24px;
+  font-size: 4vw;
   color: var(--color-low-opacity-button);
   text-decoration: underline;
   background: none;
@@ -692,11 +657,13 @@ body {
   background: var(--note-bg-color);
 }
 .task-container__button-panel button {
-  padding: 10px 0;
-  width: 140px;
-  font-size: 24px;
+  padding: 10px 25px;
+  max-width: 140px;
+  min-width: 50px;
+  font-size: 4vw;
   color: var(--border-color);
   background: none;
+  cursor: pointer;
   transition: color 0.3s ease;
 }
 .task-container__button-panel button:hover {
@@ -712,7 +679,7 @@ body {
   transition: background 0.3s ease;
 }
 .task-container__button-panel div button:nth-child(2):hover {
-  background: var(--save-button-hover);
+  background: var(--note-bg-color);
 }
 
 .button-add {
@@ -727,10 +694,109 @@ body {
 }
 .button-add:hover {
   color: var(--color-hover-default);
-  background: var(--hover-background-button);
+  background: var(--note-bg-color);
 }
 .button-add span {
   margin-left: 10px;
+}
+
+@media (min-width: 600px) {
+  .more-button {
+    width: 40px;
+    height: 40px;
+  }
+  .more-button span {
+    width: 6px;
+    height: 6px;
+  }
+  .more-button span::before {
+    top: -10px;
+  }
+  .more-button span::before, .more-button span::after {
+    width: 6px;
+    height: 6px;
+  }
+  .more-button span::after {
+    bottom: -10px;
+  }
+  .task-container__project-name,
+  .task-container__project-name input,
+  .task-container__note,
+  .task-container__subitem__input-pomos input,
+  .task-container__subitem__input-adds button,
+  .task-container__button-panel button,
+  .task-container__item__subitem,
+  .tasks-wrap,
+  .task-container__input-container,
+  .task-container__item__input-name {
+    font-size: 24px;
+  }
+  .task-container__button-panel button {
+    padding: 10px 35px;
+  }
+  .task-text {
+    font-size: 20px;
+  }
+  .button-add {
+    padding: 28px 0;
+    font-size: 26px;
+  }
+  .button-add span {
+    margin-left: 20px;
+  }
+}
+.popup-list-container {
+  position: absolute;
+  top: 44%;
+  right: 2%;
+  background: var(--popup-list-bg);
+  box-shadow: 0 0 8px var(--popup-list-box-shadow);
+  border-radius: 4px;
+  z-index: 2;
+}
+
+.popup-list__item {
+  padding: 10px 20px;
+}
+.popup-list__item button {
+  color: var(--border-color);
+  font-size: 4vw;
+  background: none;
+  cursor: pointer;
+}
+.popup-list__item button span {
+  margin-right: 20px;
+}
+.popup-list__item:hover {
+  background: var(--background-button);
+}
+
+@media (min-width: 600px) {
+  .popup-list__item button {
+    font-size: 16px;
+  }
+}
+body {
+  position: relative;
+  font-family: "Montserrat", sans-serif;
+  color: var(--color-default);
+  background: var(--background-color);
+}
+
+.hidden {
+  display: none;
+}
+
+.container {
+  background: var(--background-for-container);
+}
+
+.title {
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+  display: inline-block;
+  font-size: 5vw;
+  border-bottom: 3px solid var(--contrast-color);
 }
 
 .text {
@@ -826,9 +892,6 @@ body {
 }
 
 @media (min-width: 600px) {
-  .popup-list__item button {
-    font-size: 16px;
-  }
   .title {
     margin-bottom: 40px;
     font-size: 36px;
@@ -858,40 +921,6 @@ body {
   }
   .information {
     margin-bottom: 50px;
-  }
-  .more-button {
-    width: 40px;
-    height: 40px;
-  }
-  .more-button span {
-    width: 6px;
-    height: 6px;
-  }
-  .more-button span::before {
-    top: -10px;
-  }
-  .more-button span::before, .more-button span::after {
-    width: 6px;
-    height: 6px;
-  }
-  .more-button span::after {
-    bottom: -10px;
-  }
-  .task-container__item__subitem {
-    font-size: 24px;
-  }
-  .tasks-wrap {
-    font-size: 24px;
-  }
-  .task-text {
-    font-size: 20px;
-  }
-  .button-add {
-    padding: 28px 0;
-    font-size: 26px;
-  }
-  .button-add span {
-    margin-left: 20px;
   }
   .footer {
     padding: 25px;
