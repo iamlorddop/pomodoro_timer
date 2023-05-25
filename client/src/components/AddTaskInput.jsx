@@ -2,13 +2,11 @@ import React from 'react'
 import { useState } from 'react'
 import AddTask from './AddTask'
 
-export default function AddTaskInput({name, noteText, project}) {
-    const [taskName, setTaskName] = useState('')
-    const [note, setNote] = useState('')
-    const [projectName, setProjectName] = useState('')
+export default function AddTaskInput({todo, setTodo, note, setNote, projectName, setProjectName, actValue, setActValue, eastPomosValue, setEastPomosValue, remove, addTodo}) {
+    const [showNote, setShowNote] = useState(false)
+    const [showProject, setShowProject] = useState(false)
     const [save, setSave] = useState(false)
     const [cancel, setCancel] = useState(false)
-    const [del, setDel] = useState(false)
 
     const handleClickSave = () => {
         setSave(true)
@@ -18,93 +16,67 @@ export default function AddTaskInput({name, noteText, project}) {
         setCancel(true)
     }
 
-    const handleClickDelete = () => {
-        setDel(true)
-    }
+    const PomosContainer = () => {
+        const Act = () => {
+            const handleChange = event => {
+                setActValue(event.target.value)
+            }
 
-    const AddNote = ({text}) => {
-        const [show, setShow] = useState(false)
-
-        const handleClick = () => {
-            setShow(true)
+            return (
+                <input type='number' placeholder='0' value={actValue} onChange={handleChange} min='0'/>
+            )
         }
 
-        const handleChange = (event) => {
-            setNote(event.target.value)
-        }
+        const EstPomosInput = () => {
+            const handleChange = event => {
+                setEastPomosValue(event.target.value)
+            }
 
-        return (
-            <>
-                {show ? <textarea className='task-container__note' value={note} onChange={handleChange}></textarea> : <button onClick={handleClick}>{text}</button>}
-            </>
-
-        )
-    }
-
-    const AddProject = ({text}) => {
-        const [show, setShow] = useState(false)
-
-        const handleClick = () => {
-            setShow(true)
-        }
-
-        const handleChange = (event) => {
-            setProjectName(event.target.value)
+            return (
+                <input type='number' placeholder='1' value={eastPomosValue} onChange={handleChange} min='0'/>
+            )
         }
 
         return (
             <>
-                {show ?
-                    <div className='task-container__project-name'>Project: <input type='text' placeholder="Enter project's name" value={projectName} onChange={handleChange}/>
-                    </div>
-                    : <button onClick={handleClick}>{text}</button>
-                }
+                <Act/>
+                <span>/</span>
+                <EstPomosInput/>
             </>
-
-        )
-    }
-
-    const EstPomosInput = ({count}) => {
-        const [value, setValue] = useState('')
-
-        const handleChange = event => {
-            setValue(event.target.value)
-        }
-
-        return (
-            <input type='number' placeholder={count} value={value} onChange={handleChange} min='0'/>
         )
     }
 
     return (
         <>
-            {
-                (save && taskName) ? <AddTask name={taskName} noteText={note} project={projectName}/>
-                : (del) ? null :
-                <div className='task-container'>
-                    <div className='task-container__input-container'>
-                        <input type='text' placeholder="Enter task's name" value={taskName} onChange={event => setTaskName(event.target.value)} className='task-container__item__input-name'/>
-                        Act / Est Pomodoros
-                        <div className='task-container__subitem__input-pomos'>
-                            <EstPomosInput count='0'/>
-                            <span>/</span>
-                            <EstPomosInput count='1'/>
-                        </div>
-                        <div className='task-container__subitem__input-adds'>
-                            <AddNote text='+ Add Note'/>
-                            <AddProject text='+ Add Project'/>
-                        </div>
+            <div className='task-container'>
+                <div className='task-container__input-container'>
+                    <input type='text' placeholder="Enter task's name" value={todo} onChange={event => setTodo(event.target.value)} className='task-container__item__input-name'/>
+                    Act / Est Pomodoros
+                    <div className='task-container__subitem__input-pomos'>
+                        <PomosContainer/>
                     </div>
-                    <div className='task-container__button-panel'>
-                        <button onClick={handleClickDelete}>Delete</button>
-                        <div>
-                            <button onClick={handleClickCancel}>Cancel</button>
-                            <button type='submit' onClick={handleClickSave}>Save</button>
-                        </div>
+                    <div className='task-container__subitem__input-adds'>
+                        {showNote?
+                            <textarea className='task-container__note' value={note} onChange={event => setNote(event.target.value)}></textarea>
+                            :
+                            <button onClick={() => setShowNote(true)}>+ Add Note</button>
+                        }
+                        {showProject?
+                            <div className='task-container__project-name'>Project: <input type='text' placeholder="Enter project's name" value={projectName} onChange={event => setProjectName(event.target.value)}/>
+                            </div>
+                            :
+                            <button onClick={() => setShowProject(true)}>+ Add Project</button>
+                        }
                     </div>
                 </div>
-            }
+                <div className='task-container__button-panel'>
+                    <button onClick={() => remove}>Delete</button>
+                    <div>
+                        <button onClick={handleClickCancel}>Cancel</button>
+                        <button type='submit' onClick={addTodo}>Save</button>
+                    </div>
+                </div>
+            </div>
         </>
-
     )
 }
