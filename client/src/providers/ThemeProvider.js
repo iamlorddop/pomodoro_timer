@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import { ThemeContext, themes } from '../contexts/ThemeContext'
 
 function getTheme() {
@@ -8,13 +8,13 @@ function getTheme() {
     const userMedia = window.matchMedia('(prefers-color-scheme: light)')
     if (userMedia.matches) return themes.light
 
-    return themes.light
+    return themes.auto
 }
 
 function ThemeProvider({ children }) {
-    const [ theme, setTheme ] = React.useState(getTheme)
+    const [ theme, setTheme ] = useState(getTheme)
 
-    React.useEffect(() => {
+    useEffect(() => {
         document.documentElement.dataset.theme = theme
         localStorage.setItem('theme', theme)
     }, [ theme ])

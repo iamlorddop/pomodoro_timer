@@ -4,23 +4,36 @@ import Toggle from '../Toggle'
 import Pomodoro from "../Pomodoro";
 import AddTaskPanel from "../AddTaskPanel";
 import SocialIcons from "../SocialIcons";
+import {useState} from 'react'
+import Settings from "../Settings";
 
 function Root() {
+    const [dropStyle, setDropStyle] = useState({})
+    const styleTranslateFifty = {transform: 'translateX(50px)'}
+
   return (
       <>
+          <Settings/>
           <header className='header container'>
               <a href='#' className='logo'>
                   <img src={process.env.PUBLIC_URL + 'img/logo.svg'} alt='pomodoro logo'/>
                   <span>pomodoter</span>
               </a>
               <ThemeContext.Consumer>
-                  {({ theme, setTheme }) => (
+                  {({ theme, setTheme}) => (
                       <Toggle
                           onChange={() => {
-                              if (theme === themes.light) setTheme(themes.dark)
-                              if (theme === themes.dark) setTheme(themes.light)
+                              if (theme === themes.light) {
+                                  setDropStyle({transform: 'translateX(100px)'})
+                                  setTheme(themes.dark)
+                              }
+                              if (theme === themes.dark) {
+                                  setDropStyle({transform: 'translateX(0)'})
+                                  setTheme(themes.light)
+                              }
                           }}
-                          value={theme === themes.dark}
+                          value={theme === themes.light}
+                          styleDrop={dropStyle}
                       />
                   )}
               </ThemeContext.Consumer>

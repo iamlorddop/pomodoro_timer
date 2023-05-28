@@ -52,7 +52,7 @@ export default function AddTaskPanel() {
             {
                 todoInput ?
                     <>
-                        <AddTask list={todos} name={todo} noteText={note}/>
+                        <AddTask list={todos} name={todo} noteText={note} project={projectName} act={actValue} eastPomos={eastPomosValue}/>
                         <AddTaskInput todo={todo} setTodo={setTodo} note={note} setNote={setNote} projectName={projectName} setProjectName={setProjectName} actValue={actValue} setActValue={setActValue} eastPomosValue={eastPomosValue} setEastPomosValue={setEastPomosValue} remove={deleteTodo} addTodo={addTodo}/>
                     </>
                     : null

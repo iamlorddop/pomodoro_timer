@@ -4,7 +4,7 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 
 library.add(fab)
-function Toggle ({ value, onChange }) {
+function Toggle ({ value, onChange, styleDrop }) {
     return (
         <>
             <div className='switch-theme'>
@@ -15,7 +15,6 @@ function Toggle ({ value, onChange }) {
                         name='color-theme'
                         onClick={onChange}
                         value='light'
-                        aria-label='light'
                         readOnly
                     />
                     <input
@@ -25,7 +24,6 @@ function Toggle ({ value, onChange }) {
                         onClick={onChange}
                         checked={value}
                         value='auto'
-                        aria-label='system'
                         readOnly
                     />
                     <input
@@ -34,7 +32,6 @@ function Toggle ({ value, onChange }) {
                         name='color-theme'
                         onClick={onChange}
                         value='dark'
-                        aria-label='dark'
                         readOnly
                     />
                 </div>
@@ -44,7 +41,7 @@ function Toggle ({ value, onChange }) {
                     <FontAwesomeIcon icon="fa-solid fa-moon" />
                 </div>
                 <div className='switch-theme__container-drop'>
-                    <div className='switch-theme__drop'></div>
+                    <div className='switch-theme__drop' style={styleDrop}></div>
                 </div>
             </div>
         </>

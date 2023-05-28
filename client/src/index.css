@@ -22,6 +22,9 @@
   --color-low-opacity: #D39696;
   --color-low-opacity-button: #D39696;
   --save-button-color: #FEEEEE;
+  --bg-settings-container: #FFFFFF;
+  --color-settings: #956262;
+  --dark-background-active: rgba(62, 39, 34, 0.5);
 }
 
 :root[data-theme=dark] {
@@ -47,6 +50,9 @@
   --color-low-opacity: #8A9668;
   --color-low-opacity-button: #676D57;
   --save-button-color: #CCD566;
+  --bg-settings-container: #889562;
+  --color-settings: #CCD566;
+  --dark-background-active: rgba(43, 49, 43, 0.5);
 }
 
 * {
@@ -112,6 +118,9 @@ button, input, textarea {
   --color-low-opacity: #D39696;
   --color-low-opacity-button: #D39696;
   --save-button-color: #FEEEEE;
+  --bg-settings-container: #FFFFFF;
+  --color-settings: #956262;
+  --dark-background-active: rgba(62, 39, 34, 0.5);
 }
 
 :root[data-theme=dark] {
@@ -137,6 +146,9 @@ button, input, textarea {
   --color-low-opacity: #8A9668;
   --color-low-opacity-button: #676D57;
   --save-button-color: #CCD566;
+  --bg-settings-container: #889562;
+  --color-settings: #CCD566;
+  --dark-background-active: rgba(43, 49, 43, 0.5);
 }
 
 .switch-theme__container-icons, .switch-theme__container-radio {
@@ -239,6 +251,9 @@ button, input, textarea {
   --color-low-opacity: #D39696;
   --color-low-opacity-button: #D39696;
   --save-button-color: #FEEEEE;
+  --bg-settings-container: #FFFFFF;
+  --color-settings: #956262;
+  --dark-background-active: rgba(62, 39, 34, 0.5);
 }
 
 :root[data-theme=dark] {
@@ -264,6 +279,9 @@ button, input, textarea {
   --color-low-opacity: #8A9668;
   --color-low-opacity-button: #676D57;
   --save-button-color: #CCD566;
+  --bg-settings-container: #889562;
+  --color-settings: #CCD566;
+  --dark-background-active: rgba(43, 49, 43, 0.5);
 }
 
 .pomodoro-timers-button-container, .pomodoro-timers {
@@ -776,6 +794,37 @@ button, input, textarea {
     font-size: 16px;
   }
 }
+.dark-background-active {
+  position: fixed;
+  min-width: 100%;
+  min-height: 100%;
+  background: var(--dark-background-active);
+  z-index: 998;
+}
+
+.settings-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  padding: 20px 20px 40px;
+  color: var(--color-settings);
+  background: var(--bg-settings-container);
+  box-shadow: 0 0 50px rgba(149, 98, 98, 0.25);
+  border-radius: 6px;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+}
+.settings-container button {
+  color: inherit;
+  background: none;
+  cursor: pointer;
+}
+
+.settings__close-panel {
+  display: flex;
+  justify-content: space-between;
+}
+
 body {
   position: relative;
   font-family: "Montserrat", sans-serif;
