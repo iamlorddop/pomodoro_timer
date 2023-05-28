@@ -1,11 +1,9 @@
-import '../../index.scss'
 import { ThemeContext, themes } from '../../contexts/ThemeContext'
 import Toggle from '../Toggle'
-import Pomodoro from "../Pomodoro";
-import AddTaskPanel from "../AddTaskPanel";
-import SocialIcons from "../SocialIcons";
+import Pomodoro from '../Pomodoro'
+import AddTaskPanel from '../AddTaskPanel'
+import SocialIcons from '../SocialIcons'
 import {useState} from 'react'
-import Settings from "../Settings";
 
 function Root() {
     const [dropStyle, setDropStyle] = useState({})
@@ -13,7 +11,6 @@ function Root() {
 
   return (
       <>
-          <Settings/>
           <header className='header container'>
               <a href='#' className='logo'>
                   <img src={process.env.PUBLIC_URL + 'img/logo.svg'} alt='pomodoro logo'/>
@@ -38,7 +35,7 @@ function Root() {
                   )}
               </ThemeContext.Consumer>
           </header>
-          <div className='container container-aside-main'>
+          <div className='container'>
               <main className='container main'>
                   <h1 className='hidden'>An online Pomodoro Timer to boost your productivity</h1>
                   <div className='pomodoro-container'>

@@ -25,6 +25,9 @@
   --bg-settings-container: #FFFFFF;
   --color-settings: #956262;
   --dark-background-active: rgba(62, 39, 34, 0.5);
+  --bg-hover-settings-select: #FEEEEE;
+  --bg-settings-submit: #FEEEEE;
+  --bg-setting-submit-hover: #FAC7C7;
 }
 
 :root[data-theme=dark] {
@@ -53,6 +56,9 @@
   --bg-settings-container: #889562;
   --color-settings: #CCD566;
   --dark-background-active: rgba(43, 49, 43, 0.5);
+  --bg-hover-settings-select: #667145;
+  --bg-settings-submit: #CCD566;
+  --bg-setting-submit-hover: #657145;
 }
 
 * {
@@ -121,6 +127,9 @@ button, input, textarea {
   --bg-settings-container: #FFFFFF;
   --color-settings: #956262;
   --dark-background-active: rgba(62, 39, 34, 0.5);
+  --bg-hover-settings-select: #FEEEEE;
+  --bg-settings-submit: #FEEEEE;
+  --bg-setting-submit-hover: #FAC7C7;
 }
 
 :root[data-theme=dark] {
@@ -149,6 +158,9 @@ button, input, textarea {
   --bg-settings-container: #889562;
   --color-settings: #CCD566;
   --dark-background-active: rgba(43, 49, 43, 0.5);
+  --bg-hover-settings-select: #667145;
+  --bg-settings-submit: #CCD566;
+  --bg-setting-submit-hover: #657145;
 }
 
 .switch-theme__container-icons, .switch-theme__container-radio {
@@ -254,6 +266,9 @@ button, input, textarea {
   --bg-settings-container: #FFFFFF;
   --color-settings: #956262;
   --dark-background-active: rgba(62, 39, 34, 0.5);
+  --bg-hover-settings-select: #FEEEEE;
+  --bg-settings-submit: #FEEEEE;
+  --bg-setting-submit-hover: #FAC7C7;
 }
 
 :root[data-theme=dark] {
@@ -282,6 +297,9 @@ button, input, textarea {
   --bg-settings-container: #889562;
   --color-settings: #CCD566;
   --dark-background-active: rgba(43, 49, 43, 0.5);
+  --bg-hover-settings-select: #667145;
+  --bg-settings-submit: #CCD566;
+  --bg-setting-submit-hover: #657145;
 }
 
 .pomodoro-timers-button-container, .pomodoro-timers {
@@ -796,6 +814,8 @@ button, input, textarea {
 }
 .dark-background-active {
   position: fixed;
+  top: 0;
+  left: 0;
   min-width: 100%;
   min-height: 100%;
   background: var(--dark-background-active);
@@ -807,6 +827,8 @@ button, input, textarea {
   top: 50%;
   left: 50%;
   padding: 20px 20px 40px;
+  min-width: 80%;
+  font-size: 6vw;
   color: var(--color-settings);
   background: var(--bg-settings-container);
   box-shadow: 0 0 50px rgba(149, 98, 98, 0.25);
@@ -815,16 +837,72 @@ button, input, textarea {
   z-index: 999;
 }
 .settings-container button {
-  color: inherit;
-  background: none;
+  font-size: inherit;
   cursor: pointer;
 }
 
 .settings__close-panel {
+  padding: 20px 0 40px;
   display: flex;
   justify-content: space-between;
+  border-bottom: 1px solid var(--color-settings);
 }
 
+.settings__close-panel__cross {
+  color: var(--color-settings);
+  background: none;
+}
+
+.settings__select-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.settings__select-item {
+  padding: 10px 20px;
+  display: flex;
+  width: 100%;
+  color: inherit;
+  background: none;
+  border-bottom: 1px solid var(--color-settings);
+  transition: background 0.3s ease;
+}
+.settings__select-item span {
+  margin-left: 20px;
+}
+.settings__select-item:hover {
+  background: var(--bg-hover-settings-select);
+}
+
+.settings__button-submit-panel {
+  padding: 20px 0 0;
+}
+
+.settings__button-submit {
+  padding: 14px 0;
+  display: block;
+  float: right;
+  min-width: 132px;
+  color: var(--color-default);
+  background: var(--bg-settings-submit);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+.settings__button-submit:hover {
+  color: var(--color-settings);
+  background: var(--bg-setting-submit-hover);
+}
+
+@media (min-width: 600px) {
+  .settings-container,
+  .settings__select-item {
+    font-size: 32px;
+  }
+  .settings__button-submit {
+    width: 232px;
+  }
+}
 body {
   position: relative;
   font-family: "Montserrat", sans-serif;

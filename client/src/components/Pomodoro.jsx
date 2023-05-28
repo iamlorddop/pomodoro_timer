@@ -2,6 +2,7 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
+import Settings from "./Settings";
 
 library.add(fab)
 
@@ -24,12 +25,7 @@ export default function Pomodoro() {
                     </div>
                 </div>
                 <div className='pomodoro-timers-button-container'>
-                    <button className='pomodoro-timers-button setting-button'>
-                        <span>
-                            <FontAwesomeIcon icon="fa-solid fa-gear" />
-                        </span>
-                        Settings
-                    </button>
+                    <Settings/>
                     <button className='pomodoro-timers-button start-or-end-button'>Start timer</button>
                 </div>
             </div>

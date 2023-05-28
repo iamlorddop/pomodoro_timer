@@ -27,6 +27,9 @@
   --bg-settings-container: #FFFFFF;
   --color-settings: #956262;
   --dark-background-active: rgba(62, 39, 34, 0.5);
+  --bg-hover-settings-select: #FEEEEE;
+  --bg-settings-submit: #FEEEEE;
+  --bg-setting-submit-hover: #FAC7C7;
 }
 
 // ---- For dark theme
@@ -56,4 +59,7 @@
   --bg-settings-container: #889562;
   --color-settings: #CCD566;
   --dark-background-active: rgba(43, 49, 43, 0.5);
+  --bg-hover-settings-select: #667145;
+  --bg-settings-submit: #CCD566;
+  --bg-setting-submit-hover: #657145;
 }
