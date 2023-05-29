@@ -1,3 +1,4 @@
+import '../../index.scss'
 import { ThemeContext, themes } from '../../contexts/ThemeContext'
 import Toggle from '../Toggle'
 import Pomodoro from '../Pomodoro'

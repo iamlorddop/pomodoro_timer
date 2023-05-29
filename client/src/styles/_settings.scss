@@ -1,3 +1,28 @@
+%input {
+  padding: 12px 10px;
+  display: block;
+  color: var(--color-default);
+  font-size: 4vw;
+  background: var(--bg-settings-submit);
+  border-radius: 4px;
+}
+
+%flex {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+%flex-text-input {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+  font-weight: 600;
+}
+
 .dark-background-active {
   position: fixed;
   top: 0;
@@ -9,8 +34,8 @@
 }
 
 .settings-container {
-  position: fixed;
-  top: 50%;
+  position: absolute;
+  top: 8%;
   left: 50%;
   padding: 20px 20px 40px;
   min-width: 80%;
@@ -19,7 +44,7 @@
   background: var(--bg-settings-container);
   box-shadow: 0 0 50px rgba(149, 98, 98, 0.25);
   border-radius: 6px;
-  transform: translate(-50%, -50%);
+  transform: translateX(-50%);
   z-index: 999;
   button {
     font-size: inherit;
@@ -61,6 +86,63 @@
   }
 }
 
+.settings__leave-button {
+  margin-right: 10px;
+  color: var(--color-settings);
+  background: none;
+}
+
+.settings__setting-timer,
+.settings__setting-tasks,
+.settings__setting-sound {
+  padding: 40px 0;
+  border-bottom: 1px solid var(--color-settings);
+}
+
+.settings__setting-timer__container {
+  @extend %flex;
+  margin: 25px 0;
+  span {
+    font-weight: 600;
+  }
+  input {
+    @extend %input;
+    margin-top: 10px;
+    width: 245px;
+  }
+}
+
+.settings__setting-timer__interval {
+  @extend %flex-text-input;
+  input {
+    @extend %input;
+    width: 130px;
+  }
+}
+
+.settings__setting-tasks {
+  p {
+    margin: 20px 0;
+  }
+}
+
+.settings__setting-sound__switch-container {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.settings__setting-tasks__auto-switch,
+.settings__setting-sound__auto-switch {
+  @extend %flex-text-input;
+}
+
+.settings__setting-sound__auto-switch__input-container {
+  @extend %flex;
+  font-weight: 400;
+}
+
 .settings__button-submit-panel {
   padding: 20px 0 0;
 }
@@ -82,8 +164,16 @@
 
 @media (min-width: 600px) {
   .settings-container,
-  .settings__select-item {
+  .settings__select-item,
+  .settings__setting-timer__container input,
+  .settings__setting-timer__interval input {
     font-size: 32px;
+  }
+
+  .settings-container {
+    .settings__leave-button {
+      font-size: 28px;
+    }
   }
 
   .settings__button-submit {
