@@ -37,11 +37,15 @@ export default function Pomodoro() {
                     </span>
                 </p>
                 <div className='sun-or-moon'></div>
+                <div className='cloud-1'></div>
+                <div className='cloud-2'></div>
                 <div className='pomodoro-animation__container__pomodoro-image'>
                     <div className='pomodoro-animation__container__pomodoro-image__eyes'></div>
                     <img src={process.env.PUBLIC_URL + 'img/pomodoro.png'} alt='pomodoro'/>
                 </div>
-                <div className='table'></div>
+                <div className='table'>
+                    <div className='shadow-table'></div>
+                </div>
             </div>
         </>
     )

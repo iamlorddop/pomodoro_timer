@@ -13,7 +13,8 @@
   --button-color-hover: #513A3A;
   --background-pomodoro-container: linear-gradient(115deg, #7ABFFF 15%, #85E2FF 80%);
   --text-shadow: #1A7AD3;
-  --table-pomodoro-color: linear-gradient(270deg, rgba(151, 70, 53, 0.9) 8%, #9C4735 84%);
+  --table-pomodoro-color: linear-gradient(270deg, rgb(151, 70, 53) 8%, #9C4735 84%);
+  --table-pomodoro-shadow-color: #803525;
   --sun-or-moon-color: #FFF8DD;
   --task-done-hover-color: #513A3A;
   --note-bg-color: #FAC7C7;
@@ -44,7 +45,8 @@
   --button-color-hover: #0F110F;
   --background-pomodoro-container: linear-gradient(115deg, #1F81DC 15%, #084E8E 80%);
   --text-shadow: #082743;
-  --table-pomodoro-color: linear-gradient(270deg, rgba(121, 62, 49, 0.9) 8%, #522E26 84%);
+  --table-pomodoro-color: linear-gradient(270deg, rgb(121, 62, 49) 8%, #522E26 84%);
+  --table-pomodoro-shadow-color: #3E2722;
   --sun-or-moon-color: #F2F2F2;
   --task-done-hover-color: #0F110F;
   --note-bg-color: #6D784C;
@@ -68,7 +70,7 @@
   box-sizing: border-box;
 }
 
-ol, ul {
+ul {
   list-style: none;
 }
 
@@ -88,7 +90,7 @@ button, input, textarea {
   box-sizing: border-box;
 }
 
-ol, ul {
+ul {
   list-style: none;
 }
 
@@ -115,7 +117,8 @@ button, input, textarea {
   --button-color-hover: #513A3A;
   --background-pomodoro-container: linear-gradient(115deg, #7ABFFF 15%, #85E2FF 80%);
   --text-shadow: #1A7AD3;
-  --table-pomodoro-color: linear-gradient(270deg, rgba(151, 70, 53, 0.9) 8%, #9C4735 84%);
+  --table-pomodoro-color: linear-gradient(270deg, rgb(151, 70, 53) 8%, #9C4735 84%);
+  --table-pomodoro-shadow-color: #803525;
   --sun-or-moon-color: #FFF8DD;
   --task-done-hover-color: #513A3A;
   --note-bg-color: #FAC7C7;
@@ -146,7 +149,8 @@ button, input, textarea {
   --button-color-hover: #0F110F;
   --background-pomodoro-container: linear-gradient(115deg, #1F81DC 15%, #084E8E 80%);
   --text-shadow: #082743;
-  --table-pomodoro-color: linear-gradient(270deg, rgba(121, 62, 49, 0.9) 8%, #522E26 84%);
+  --table-pomodoro-color: linear-gradient(270deg, rgb(121, 62, 49) 8%, #522E26 84%);
+  --table-pomodoro-shadow-color: #3E2722;
   --sun-or-moon-color: #F2F2F2;
   --task-done-hover-color: #0F110F;
   --note-bg-color: #6D784C;
@@ -227,7 +231,7 @@ button, input, textarea {
   box-sizing: border-box;
 }
 
-ol, ul {
+ul {
   list-style: none;
 }
 
@@ -254,7 +258,8 @@ button, input, textarea {
   --button-color-hover: #513A3A;
   --background-pomodoro-container: linear-gradient(115deg, #7ABFFF 15%, #85E2FF 80%);
   --text-shadow: #1A7AD3;
-  --table-pomodoro-color: linear-gradient(270deg, rgba(151, 70, 53, 0.9) 8%, #9C4735 84%);
+  --table-pomodoro-color: linear-gradient(270deg, rgb(151, 70, 53) 8%, #9C4735 84%);
+  --table-pomodoro-shadow-color: #803525;
   --sun-or-moon-color: #FFF8DD;
   --task-done-hover-color: #513A3A;
   --note-bg-color: #FAC7C7;
@@ -285,7 +290,8 @@ button, input, textarea {
   --button-color-hover: #0F110F;
   --background-pomodoro-container: linear-gradient(115deg, #1F81DC 15%, #084E8E 80%);
   --text-shadow: #082743;
-  --table-pomodoro-color: linear-gradient(270deg, rgba(121, 62, 49, 0.9) 8%, #522E26 84%);
+  --table-pomodoro-color: linear-gradient(270deg, rgb(121, 62, 49) 8%, #522E26 84%);
+  --table-pomodoro-shadow-color: #3E2722;
   --sun-or-moon-color: #F2F2F2;
   --task-done-hover-color: #0F110F;
   --note-bg-color: #6D784C;
@@ -360,6 +366,7 @@ button, input, textarea {
   overflow: hidden;
 }
 .pomodoro-animation__container .text {
+  position: relative;
   padding-top: 30px;
   display: flex;
   flex-direction: column;
@@ -369,6 +376,7 @@ button, input, textarea {
   font-size: 6.5vw;
   font-weight: 600;
   text-shadow: 0 9px 10px var(--text-shadow);
+  z-index: 6;
 }
 
 .sun-or-moon {
@@ -382,13 +390,30 @@ button, input, textarea {
   box-shadow: 0 0 55px 45px rgba(255, 255, 255, 0.25);
 }
 
+.cloud-1, .cloud-2 {
+  position: absolute;
+  top: 16%;
+  left: -832px;
+  width: 52rem;
+  height: 4.875rem;
+  background: url("../img/cloud.png");
+  background-size: cover;
+}
+
+.cloud-1 {
+  animation: cloud 50s linear infinite;
+}
+
+.cloud-2 {
+  animation: cloud 50s linear 25s infinite;
+}
+
 .pomodoro-animation__container__pomodoro-image {
   position: absolute;
   left: 50%;
   bottom: 10%;
   transform: translateX(-50%);
   z-index: 4;
-  overflow: hidden;
 }
 .pomodoro-animation__container__pomodoro-image img {
   width: 9.5rem;
@@ -403,6 +428,18 @@ button, input, textarea {
   background: url("../img/eyes-open-pomodoro.png");
   background-size: cover;
   transform: translateX(-50%);
+  z-index: 5;
+}
+
+.shadow-table {
+  position: absolute;
+  bottom: 35%;
+  left: 46%;
+  width: 7.25rem;
+  height: 3.375rem;
+  background: var(--table-pomodoro-shadow-color);
+  border-radius: 50%;
+  transform: translate(-60%, 0%);
 }
 
 .table {
@@ -413,6 +450,70 @@ button, input, textarea {
   background: var(--table-pomodoro-color);
 }
 
+@keyframes cloud {
+  0% {
+    left: 832px;
+  }
+  100% {
+    left: -832px;
+  }
+}
+@keyframes changesunormoon {
+  0% {
+    top: 50px;
+    right: 115px;
+    width: 84px;
+    height: 84px;
+  }
+  10% {
+    top: 20px;
+    right: 145px;
+  }
+  15% {
+    top: 5px;
+    right: 170px;
+  }
+  35% {
+    top: -50px;
+    right: 400px;
+  }
+  55% {
+    top: 5px;
+    right: 660px;
+  }
+  65% {
+    top: 20px;
+    right: 700px;
+  }
+  75% {
+    top: 50px;
+    right: 800px;
+  }
+  85% {
+    top: 300px;
+    right: 1400px;
+  }
+  95% {
+    top: 600px;
+    right: 1500px;
+  }
+  96% {
+    top: 600px;
+    right: 240px;
+    width: 194px;
+    height: 194px;
+  }
+  98% {
+    top: 300px;
+    right: 80px;
+  }
+  100% {
+    top: 50px;
+    right: 115px;
+    width: 84px;
+    height: 84px;
+  }
+}
 @media (min-width: 600px) {
   .pomodoro-timers-flex-container {
     margin-bottom: 40px;
@@ -448,11 +549,13 @@ button, input, textarea {
     top: 50px;
     right: 115px;
   }
+  .shadow-table {
+    width: 16.25rem;
+    height: 5.375rem;
+  }
   .table {
     height: 160px;
   }
-}
-@media (min-width: 600px) {
   .pomodoro-animation__container__pomodoro-image {
     position: absolute;
     z-index: 4;
@@ -460,11 +563,25 @@ button, input, textarea {
   .pomodoro-animation__container__pomodoro-image img {
     width: 21.375rem;
   }
+  .cloud-1,
+  .cloud-2 {
+    left: -2545px;
+    width: 2545px;
+    height: 238px;
+  }
   .pomodoro-animation__container__pomodoro-image__eyes {
     width: 12rem;
     height: 42px;
     background: url("../img/eyes-open-pomodoro.png");
     background-size: cover;
+  }
+  @keyframes cloud {
+    0% {
+      left: 2545px;
+    }
+    100% {
+      left: -2545px;
+    }
   }
 }
 .aside-container {
@@ -1053,6 +1170,10 @@ body {
 
 .information {
   margin-bottom: 30px;
+}
+
+.list {
+  list-style-position: inside;
 }
 
 .footer {
