@@ -390,10 +390,29 @@ button, input, textarea {
   box-shadow: 0 0 55px 45px rgba(255, 255, 255, 0.25);
 }
 
+.pomodoro-animation__container__pomodoro-image__division-1,
+.pomodoro-animation__container__pomodoro-image__division-2 {
+  position: absolute;
+  bottom: 36%;
+  width: 100%;
+  height: 12px;
+  background: url("../img/division-on-pomodoro.png");
+  background-size: cover;
+  overflow: hidden;
+}
+
+.pomodoro-animation__container__pomodoro-image__division-1 {
+  left: 0;
+}
+
+.pomodoro-animation__container__pomodoro-image__division-2 {
+  left: 100%;
+}
+
 .cloud-1, .cloud-2 {
   position: absolute;
   top: 10%;
-  left: -832px;
+  left: -848px;
   width: 53rem;
   height: 9.875rem;
   background: url("../img/cloud.png");
@@ -412,8 +431,9 @@ button, input, textarea {
   position: absolute;
   left: 50%;
   bottom: 10%;
-  transform: translateX(-50%);
+  transform: translate(-50%);
   z-index: 4;
+  overflow: hidden;
 }
 .pomodoro-animation__container__pomodoro-image img {
   width: 9.5rem;
@@ -429,7 +449,7 @@ button, input, textarea {
   background-size: cover;
   transform: translateX(-50%);
   z-index: 5;
-  animation: blinkalltime 1.5s cubic-bezier(0.79, 0.37, 0.13, 0.63) 2s infinite;
+  animation: blinkalltime 4s cubic-bezier(0.79, 0.37, 0.13, 0.63) infinite;
 }
 
 .shadow-table {
@@ -451,6 +471,71 @@ button, input, textarea {
   background: var(--table-pomodoro-color);
 }
 
+@keyframes pomodororings {
+  0% {
+    transform: rotate(0) translate(-50%);
+  }
+  5% {
+    transform: rotate(10deg) translate(-50%);
+  }
+  10% {
+    transform: rotate(-10deg) translate(-50%);
+  }
+  15% {
+    transform: rotate(10deg) translate(-50%);
+  }
+  20% {
+    transform: rotate(-10deg) translate(-50%);
+  }
+  25% {
+    transform: rotate(10deg) translate(-50%);
+  }
+  30% {
+    transform: rotate(-10deg) translate(-50%);
+  }
+  35% {
+    transform: rotate(10deg) translate(-50%);
+  }
+  40% {
+    transform: rotate(-10deg) translate(-50%);
+  }
+  45% {
+    transform: rotate(10deg) translate(-50%);
+  }
+  50% {
+    transform: rotate(-10deg) translate(-50%);
+  }
+  55% {
+    transform: rotate(10deg) translate(-50%);
+  }
+  60% {
+    transform: rotate(-10deg) translate(-50%);
+  }
+  65% {
+    transform: rotate(10deg) translate(-50%);
+  }
+  70% {
+    transform: rotate(-10deg) translate(-50%);
+  }
+  75% {
+    transform: rotate(10deg) translate(-50%);
+  }
+  80% {
+    transform: rotate(-10deg) translate(-50%);
+  }
+  85% {
+    transform: rotate(10deg) translate(-50%);
+  }
+  90% {
+    transform: rotate(-10deg) translate(-50%);
+  }
+  95% {
+    transform: rotate(10deg) translate(-50%);
+  }
+  100% {
+    transform: rotate(0) translate(-50%);
+  }
+}
 @keyframes blinkalltime {
   0% {
     top: 34%;
@@ -458,13 +543,37 @@ button, input, textarea {
     background: url("../img/eyes-open-pomodoro.png");
     background-size: cover;
   }
+  45.8% {
+    top: 34%;
+    height: 18px;
+    background: url("../img/blink_09.png");
+    background-size: cover;
+  }
+  45.85% {
+    top: 34%;
+    height: 18px;
+    background: url("../img/blink_08.png");
+    background-size: cover;
+  }
   46% {
+    top: 34%;
+    height: 18px;
+    background: url("../img/blink_06.png");
+    background-size: cover;
+  }
+  47% {
+    top: 34%;
+    height: 18px;
+    background: url("../img/blink_07.png");
+    background-size: cover;
+  }
+  48% {
     top: 34.1%;
     height: 11.5px;
     background: url("../img/blink_01.png");
     background-size: cover;
   }
-  48% {
+  49% {
     top: 34.2%;
     height: 5.5px;
     background: url("../img/blink_02.png");
@@ -476,16 +585,40 @@ button, input, textarea {
     background: url("../img/blink_03.png");
     background-size: cover;
   }
-  52% {
+  51% {
     top: 34.2%;
     height: 5.5px;
     background: url("../img/blink_02.png");
     background-size: cover;
   }
-  54% {
+  52% {
     top: 34.1%;
     height: 11.5px;
     background: url("../img/blink_01.png");
+    background-size: cover;
+  }
+  53% {
+    top: 34%;
+    height: 18px;
+    background: url("../img/blink_07.png");
+    background-size: cover;
+  }
+  54% {
+    top: 34%;
+    height: 18px;
+    background: url("../img/blink_06.png");
+    background-size: cover;
+  }
+  54.05% {
+    top: 34%;
+    height: 18px;
+    background: url("../img/blink_08.png");
+    background-size: cover;
+  }
+  54.1% {
+    top: 34%;
+    height: 18px;
+    background: url("../img/blink_09.png");
     background-size: cover;
   }
   100% {
@@ -495,12 +628,28 @@ button, input, textarea {
     background-size: cover;
   }
 }
-@keyframes cloud {
+@keyframes divisionone {
   0% {
-    left: 832px;
+    left: 0;
   }
   100% {
-    left: -832px;
+    left: -100%;
+  }
+}
+@keyframes divisiontwo {
+  0% {
+    left: 100%;
+  }
+  100% {
+    left: -100%;
+  }
+}
+@keyframes cloud {
+  0% {
+    left: 848px;
+  }
+  100% {
+    left: -848px;
   }
 }
 @keyframes changesunormoon {
@@ -608,6 +757,16 @@ button, input, textarea {
   .pomodoro-animation__container__pomodoro-image img {
     width: 21.375rem;
   }
+  .pomodoro-animation__container__pomodoro-image__division-1,
+  .pomodoro-animation__container__pomodoro-image__division-2 {
+    position: absolute;
+    bottom: 36%;
+    width: 100%;
+    height: 27px;
+    background: url("../img/division-on-pomodoro.png");
+    background-size: cover;
+    overflow: hidden;
+  }
   .cloud-1,
   .cloud-2 {
     left: -2545px;
@@ -619,7 +778,7 @@ button, input, textarea {
     height: 42px;
     background: url("../img/eyes-open-pomodoro.png");
     background-size: cover;
-    animation: blinkalltime 1.5s cubic-bezier(0.79, 0.37, 0.13, 0.63) 2s infinite;
+    animation: blinkalltime 4s cubic-bezier(0.79, 0.37, 0.13, 0.63) infinite;
   }
   @keyframes cloud {
     0% {
@@ -636,13 +795,37 @@ button, input, textarea {
       background: url("../img/eyes-open-pomodoro.png");
       background-size: cover;
     }
+    45.8% {
+      top: 34%;
+      height: 42px;
+      background: url("../img/blink_09.png");
+      background-size: cover;
+    }
+    45.85% {
+      top: 34%;
+      height: 42px;
+      background: url("../img/blink_08.png");
+      background-size: cover;
+    }
     46% {
+      top: 34%;
+      height: 42px;
+      background: url("../img/blink_06.png");
+      background-size: cover;
+    }
+    47% {
+      top: 34%;
+      height: 42px;
+      background: url("../img/blink_07.png");
+      background-size: cover;
+    }
+    48% {
       top: 34.5%;
       height: 27px;
       background: url("../img/blink_01.png");
       background-size: cover;
     }
-    48% {
+    49% {
       top: 35%;
       height: 13px;
       background: url("../img/blink_02.png");
@@ -654,16 +837,40 @@ button, input, textarea {
       background: url("../img/blink_03.png");
       background-size: cover;
     }
-    52% {
+    51% {
       top: 35%;
       height: 13px;
       background: url("../img/blink_02.png");
       background-size: cover;
     }
-    54% {
+    52% {
       top: 34.5%;
       height: 27px;
       background: url("../img/blink_01.png");
+      background-size: cover;
+    }
+    53% {
+      top: 34%;
+      height: 42px;
+      background: url("../img/blink_07.png");
+      background-size: cover;
+    }
+    54% {
+      top: 34%;
+      height: 42px;
+      background: url("../img/blink_06.png");
+      background-size: cover;
+    }
+    54.05% {
+      top: 34%;
+      height: 42px;
+      background: url("../img/blink_08.png");
+      background-size: cover;
+    }
+    54.1% {
+      top: 34%;
+      height: 42px;
+      background: url("../img/blink_09.png");
       background-size: cover;
     }
     100% {

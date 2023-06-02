@@ -41,6 +41,8 @@ export default function Pomodoro() {
                 <div className='cloud-2'></div>
                 <div className='pomodoro-animation__container__pomodoro-image'>
                     <div className='pomodoro-animation__container__pomodoro-image__eyes'></div>
+                    <div className='pomodoro-animation__container__pomodoro-image__division-1'></div>
+                    <div className='pomodoro-animation__container__pomodoro-image__division-2'></div>
                     <img src={process.env.PUBLIC_URL + 'img/pomodoro.png'} alt='pomodoro'/>
                 </div>
                 <div className='table'>
